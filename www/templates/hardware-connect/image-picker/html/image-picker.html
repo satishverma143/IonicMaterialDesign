@@ -1,0 +1,61 @@
+<!--View Information-->
+<!--View name : Device Image Picker-->
+<!--Controller name : imagePickerCtrl-->
+<!--Controller path : www/templates/hardware-connect/image-picker/js/controllers.js-->
+<!--State name : app.imagePicker-->
+<!--URL : #app/imagePicker-->
+
+<ion-view view-title="">
+    <!--toolbar section-->
+    <md-toolbar class="bar-subheader md-tall md-primary toolbar-medium">
+        <div>
+            <h1>Image Picker</h1>
+
+            <h2>Device Image Gallery</h2>
+        </div>
+        <a class="md-button md-accent md-fab fab-toolbar-medium"
+           ng-click="showListBottomSheet($event)"
+           aria-label="showListBottomSheet">
+            <i class="fa fa-picture-o"></i>
+        </a>
+    </md-toolbar> <!--end toolbar section-->
+
+    <!--image picker section-->
+    <ion-content id="image-picker-content">
+        <!--list section-->
+        <md-list>
+            <md-card ng-repeat="image in imageList">
+                <img ng-src="{{image}}" class="md-card-image" alt="image{{$index+1}}">
+                <md-card-content>
+                    <h2 class="md-title">Image {{$index+1}}</h2>
+                </md-card-content>
+            </md-card>
+        </md-list>  <!--end list section-->
+    </ion-content><!--end image picker section-->
+
+    <!--angular template section-->
+    <script type="text/ng-template" id="image-picker-actions-template">
+        <md-bottom-sheet class="md-list md-has-header">
+            <h1 class="md-bottom-sheet-header">Image Picker Actions</h1>
+            <!--list section-->
+            <md-list>
+                <md-list-item>
+                    <a class="md-default-theme md-bottom-sheet-list-item"
+                       ng-click="selectImage(1)">
+                        <i class="ion-image"></i>
+                        <span>Single Select</span>
+                    </a>
+                </md-list-item>
+
+                <md-list-item>
+                    <a class="md-default-theme md-bottom-sheet-list-item"
+                       ng-click="selectImage(9999)">
+                        <i class="ion-images"></i>
+                        <span>Multiple Select</span>
+                    </a>
+                </md-list-item>
+            </md-list><!--end list section-->
+        </md-bottom-sheet>
+    </script><!--end angular template section-->
+
+</ion-view>

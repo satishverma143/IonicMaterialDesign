@@ -1,0 +1,41 @@
+<!--View Information-->
+<!--View name : Foursquare Login-->
+<!--Controller name : foursquareLoginCtrl-->
+<!--Controller path : www/templates/social-network-connect/foursquare/js/controllers.js-->
+<!--State name : app.foursquareLogin-->
+<!--URL : #app/foursquareLogin-->
+
+<ion-view title="Foursquare Connect">
+    <!--login content section-->
+    <ion-content scroll="false" id="social-login">
+        <form>
+
+            <div>
+                <i class="fa fa-foursquare foursquare-color"></i>
+            </div>
+            <div class="sub-header">Connect data with foursquare</div>
+
+            <div class="ng-hide" ng-show="isLogin">
+                <a class="md-raised social-button md-button md-default-theme foursquare-color-background"
+                   ng-click="goToUserProfile()">
+                    GO TO FOURSQUARE APP
+                </a>
+            </div>
+
+            <div class="ng-hide" ng-show="!isLogin">
+                <a class="md-raised social-button md-button md-default-theme  foursquare-color-background"
+                   ng-click="login()">
+                    LOG IN WITH FOURSQUARE
+                </a>
+                <br/>
+                <a href="#/app/fakeSignUp" class="md-raised md-button md-default-theme social-default-button">SIGN
+                    UP</a>
+                <a href="#/app/tryApp" class="md-raised md-button md-default-theme social-default-button">TRY APP</a>
+
+                <div class="footer">Already have an account? <a href="#/app/fakeLogin">Sign In</a>
+                </div>
+            </div>
+        </form>
+
+    </ion-content><!--end login content section-->
+</ion-view>

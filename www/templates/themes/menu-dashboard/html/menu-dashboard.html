@@ -1,0 +1,114 @@
+<!--View Information-->
+<!--View name : Menu Dashboard-->
+<!--Controller name : menuDashboardCtrl-->
+<!--Controller path : www/templates/themes/menu-dashboard/js/controllers.js-->
+<!--State name : app.menuDashboard-->
+<!--URL : #app/menuDashboard-->
+
+<ion-view title="Dashboard">
+    <!--menu dashboard section-->
+    <ion-content id="menu-dashboard-content">
+        <!--panel section-->
+        <div class="menu-panel">
+            <div class="row">
+                <div class="col-33" ng-click="showToast('Image')">
+                    <i class="fa fa-picture-o"></i>
+
+                    <p>Image</p>
+                </div>
+                <div class="col-33" ng-click="showToast('Music')">
+                    <i class="fa fa fa-music"></i>
+
+                    <p>Music</p>
+                </div>
+                <div class="col-33" ng-click="showToast('Camera')">
+                    <i class="fa fa fa-camera"></i>
+
+                    <p>Camera</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-33" ng-click="showToast('Video')">
+                    <i class="fa fa-video-camera"></i>
+
+                    <p>Video</p>
+                </div>
+                <div class="col-33" ng-click="showToast('Setting')">
+                    <i class="fa fa-cog"></i>
+
+                    <p>Setting</p>
+                </div>
+                <div class="col-33" ng-click="showToast('Contract')">
+                    <i class="fa fa-users"></i>
+
+                    <p>Contract</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-33" ng-click="showToast('Inbox')">
+                    <i class="fa fa-inbox"></i>
+
+                    <p>Inbox</p>
+                </div>
+                <div class="col-33" ng-click="showToast('Card')">
+                    <i class="fa fa-credit-card"></i>
+
+                    <p>Card</p>
+                </div>
+                <div class="col-33" ng-click="showToast('More')">
+                    <i class="fa fa-ellipsis-h"></i>
+
+                    <p>More</p>
+                </div>
+            </div>
+        </div><!--end panel section-->
+
+        <!--panel footer section-->
+        <div class="menu-dashboard-footer">
+            <md-whiteframe class="md-whiteframe-z1" layout ng-click="showToast('Wordpress Blog')">
+                <div class="row">
+                    <div class="col-10">
+                        <i class="fa fa-wordpress"></i>
+                    </div>
+                    <div class="col-80">
+                        Wordpress Blog
+                    </div>
+                    <div class="col-10">
+                        <i class="fa fa-angle-right"></i>
+                    </div>
+                </div>
+            </md-whiteframe>
+
+            <md-whiteframe class="md-whiteframe-z1" layout ng-click="showToast('Google Connect')">
+                <div class="row">
+                    <div class="col-10">
+                        <i class="fa fa-google-plus"></i>
+                    </div>
+                    <div class="col-80">
+                        Google Connect
+                    </div>
+                    <div class="col-10">
+                        <i class="fa fa-angle-right"></i>
+                    </div>
+                </div>
+            </md-whiteframe>
+
+            <md-whiteframe class="md-whiteframe-z1" layout ng-click="showToast('Facebook Connect')">
+                <div class="row">
+                    <div class="col-10">
+                        <i class="fa fa-facebook"></i>
+                    </div>
+                    <div class="col-80">
+                        Facebook Connect
+                    </div>
+                    <div class="col-10">
+                        <i class="fa fa-angle-right"></i>
+                    </div>
+                </div>
+            </md-whiteframe>
+
+        </div><!--end panel footer section-->
+    </ion-content><!--Menu dashboard section-->
+</ion-view>

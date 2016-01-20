@@ -1,0 +1,25 @@
+Ionic Material Design
+Version 3.0 - Released 4 November 2015
+——————————————————————————————————————————
+New Feature :
+- Android Map Connect.
+- IOS Map Connect.
+- Setting for Enable/Disable view animation.
+——————————————————————————————————————————
+Performance :
+- Improve application performance by add Crosswalk Browser for Android.
+- Improve view content and add new setting section for Enable/Disable view animation.
+——————————————————————————————————————————
+Update :
+- Update toggle left Menu to enable animation on IOS and disable on Android.
+——————————————————————————————————————————
+Plugin :
+- Change SQLite Plugin to https://github.com/litehelpers/Cordova-sqlite-storage.git
+- Add new plugin cordova-plugin-transport-security to allow 'Arbitrary Loads' by adding 
+  a declaration to the Info.plist file to bypass the Xcode 7 and iOS 9 App Transport 
+  Security.
+——————————————————————————————————————————
+Documentation :
+- Add new section for detail of IOS Map Connect J-6-1
+- Add new section for detail of Android Map Connect J-6-2
+——————————————————————————————————————————

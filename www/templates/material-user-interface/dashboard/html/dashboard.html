@@ -1,0 +1,771 @@
+<!--View Information-->
+<!--View name : Dashboard-->
+<!--Controller name : dashboardCtrl-->
+<!--Controller path : www/templates/material-user-interface/dashboard/js/controllers.js-->
+<!--State name : app.dashboard-->
+<!--URL : #app/dashboard-->
+
+<ion-view view-title="">
+
+    <!--right button on navigation bar-->
+    <ion-nav-buttons side="right">
+        <md-button class="md-icon-button ion-nav-button-right" ng-click="goToSetting()"
+                   aria-label="Setting">
+            <i class="ion-android-more-vertical"></i>
+        </md-button>
+    </ion-nav-buttons> <!--end right button on navigation bar-->
+
+    <!--toolbar section-->
+    <md-toolbar class="bar-subheader md-tall md-primary toolbar-medium">
+        <div>
+            <h1>Material Design</h1>
+
+            <h2>Ionic Material Design</h2>
+        </div>
+        <a class="md-button md-accent md-fab fab-toolbar-medium"
+           aria-label="Add">
+            <i class="icon ion-plus"></i>
+        </a>
+    </md-toolbar><!--end toolbar section-->
+
+    <!--dashboard section-->
+    <ion-content id="dashboard-content">
+
+        <!--list section-->
+
+        <!--Below code it will disable animation to better performance-->
+        <div ng-if="!isAnimated" class="menu-list">
+            <md-subheader class="md-warn">Application Storage</md-subheader>
+            <div class="row menu-item"  ng-click="navigateTo('app.contractlist')">
+                <div class="col-25">
+                    <i class="fa fa-database"></i>
+                </div>
+                <div class="col-50">
+                    <span>SQLite DB</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <div class="row menu-item" ng-click="navigateTo('app.notelist')">
+                <div class="col-25">
+                    <i class="fa fa-cube"></i>
+                </div>
+                <div class="col-50">
+                    <span>Local Storage DB</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <md-subheader class="md-warn">Social Network Connect</md-subheader>
+            <div class="row menu-item"  ng-click="navigateTo('app.wordpressLogin')">
+                <div class="col-25">
+                    <i class="fa fa-wordpress"></i>
+                </div>
+                <div class="col-50">
+                    <span>WordPress</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <div class="row menu-item"  ng-click="navigateTo('app.facebookLogin')">
+                <div class="col-25">
+                    <i class="fa fa-facebook"></i>
+                </div>
+                <div class="col-50">
+                    <span>Facebook</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <div class="row menu-item"  ng-click="navigateTo('app.googlePlusLogin')">
+                <div class="col-25">
+                    <i class="fa fa-google-plus"></i>
+                </div>
+                <div class="col-50">
+                    <span>Google Plus</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <div class="row menu-item"  ng-click="navigateTo('app.instagramLogin')">
+                <div class="col-25">
+                    <i class="fa fa-instagram"></i>
+                </div>
+                <div class="col-50">
+                    <span>Instagram</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <div class="row menu-item"  ng-click="navigateTo('app.foursquareLogin')">
+                <div class="col-25">
+                    <i class="fa fa-foursquare"></i>
+                </div>
+                <div class="col-50">
+                    <span>Foursquare</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <div class="row menu-item"  ng-click="navigateTo('app.dropboxLogin')">
+                <div class="col-25">
+                    <i class="fa fa-dropbox"></i>
+                </div>
+                <div class="col-50">
+                    <span>Dropbox</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <md-subheader class="md-warn">Share Application Content</md-subheader>
+            <div class="row menu-item"  ng-click="navigateTo('app.productList')">
+                <div class="col-25">
+                    <i class="fa fa-share-alt"></i>
+                </div>
+                <div class="col-50">
+                    <span>Social Share</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <div class="row menu-item"  ng-click="navigateTo('app.contractUs')">
+                <div class="col-25">
+                    <i class="fa fa-inbox"></i>
+                </div>
+                <div class="col-50">
+                    <span>Email & Message</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <md-subheader class="md-warn">Advertising Application</md-subheader>
+            <div class="row menu-item"  ng-click="navigateTo('app.googleAdmob')">
+                <div class="col-25">
+                    <i class="fa fa-money"></i>
+                </div>
+                <div class="col-50">
+                    <span>Google AdMob</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <md-subheader class="md-warn">Push Notification</md-subheader>
+            <div class="row menu-item"  ng-click="navigateTo('app.singlePushNotification')">
+                <div class="col-25">
+                    <i class="fa fa-sign-in fa-rotate-90"></i>
+                </div>
+                <div class="col-50">
+                    <span>Single Push</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <div class="row menu-item"  ng-click="navigateTo('app.schedulePushNotification')">
+                <div class="col-25">
+                    <i class="fa fa-clock-o"></i>
+                </div>
+                <div class="col-50">
+                    <span>Schedule Push</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <md-subheader class="md-warn">Map API Connect</md-subheader>
+            <div class="row menu-item"  ng-click="navigateTo('app.iosMapConnect')">
+                <div class="col-25">
+                    <i class="fa fa-map-o"></i>
+                </div>
+                <div class="col-50">
+                    <span>IOS Map</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <div class="row menu-item"  ng-click="navigateTo('app.androidMapConnect')">
+                <div class="col-25">
+                    <i class="fa fa-map"></i>
+                </div>
+                <div class="col-50">
+                    <span>Android Map</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <md-subheader class="md-warn">Hardware Connect</md-subheader>
+            <div class="row menu-item"  ng-click="navigateTo('app.mobileContractList')">
+                <div class="col-25">
+                    <i class="fa fa-users"></i>
+                </div>
+                <div class="col-50">
+                    <span>Mobile Contract</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <div class="row menu-item"  ng-click="navigateTo('app.imagePicker')">
+                <div class="col-25">
+                    <i class="fa fa-picture-o"></i>
+                </div>
+                <div class="col-50">
+                    <span>Image Picker</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <div class="row menu-item"  ng-click="navigateTo('app.vibration')">
+                <div class="col-25">
+                    <i class="fa fa-asterisk"></i>
+                </div>
+                <div class="col-50">
+                    <span>Vibration</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <div class="row menu-item"  ng-click="navigateTo('app.flashLight')">
+                <div class="col-25">
+                    <i class="fa fa-bolt"></i>
+                </div>
+                <div class="col-50">
+                    <span>Flashlight</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <div class="row menu-item"  ng-click="navigateTo('app.deviceInformation')">
+                <div class="col-25">
+                    <i class="fa fa-info"></i>
+                </div>
+                <div class="col-50">
+                    <span>Device Information</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <md-subheader class="md-warn">Material User Interface</md-subheader>
+            <div class="row menu-item"  ng-click="navigateTo('app.defaultUI')">
+                <div class="col-25">
+                    <i class="fa fa-bookmark-o"></i>
+                </div>
+                <div class="col-50">
+                    <span>Default UI</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <md-subheader class="md-warn">Themes</md-subheader>
+            <div class="row menu-item"  ng-click="navigateTo('app.tryAppNoBackBtn')">
+                <div class="col-25">
+                    <i class="fa fa-diamond"></i>
+                </div>
+                <div class="col-50">
+                    <span>Try App</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <div class="row menu-item"  ng-click="navigateTo('app.pricing')">
+                <div class="col-25">
+                    <i class="fa fa-line-chart"></i>
+                </div>
+                <div class="col-50">
+                    <span>Pricing</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <div class="row menu-item"  ng-click="navigateTo('app.menuDashboard')">
+                <div class="col-25">
+                    <i class="fa fa-th-large"></i>
+                </div>
+                <div class="col-50">
+                    <span>Menu Dashboard</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <div class="row menu-item"  ng-click="navigateTo('app.expense')">
+                <div class="col-25">
+                    <i class="fa fa-suitcase"></i>
+                </div>
+                <div class="col-50">
+                    <span>Expense</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <div class="row menu-item"  ng-click="navigateTo('app.newsFeed')">
+                <div class="col-25">
+                    <i class="fa fa-newspaper-o"></i>
+                </div>
+                <div class="col-50">
+                    <span>News Feed</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <div class="row menu-item"  ng-click="navigateTo('app.onlineCourse')">
+                <div class="col-25">
+                    <i class="fa fa-graduation-cap"></i>
+                </div>
+                <div class="col-50">
+                    <span>Online Course</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <div class="row menu-item"  ng-click="navigateTo('app.locationFeed')">
+                <div class="col-25">
+                    <i class="fa fa-flag"></i>
+                </div>
+                <div class="col-50">
+                    <span>Location Feed</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <div class="row menu-item"  ng-click="navigateTo('app.cubeFeed')">
+                <div class="col-25">
+                    <i class="fa fa-cubes"></i>
+                </div>
+                <div class="col-50">
+                    <span>Cube Feed</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <div class="row menu-item"  ng-click="navigateTo('app.clothShop')">
+                <div class="col-25">
+                    <i class="fa fa-heart"></i>
+                </div>
+                <div class="col-50">
+                    <span>Cloth Shop</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <div class="row menu-item"  ng-click="navigateTo('app.catalog')">
+                <div class="col-25">
+                    <i class="fa fa-tags"></i>
+                </div>
+                <div class="col-50">
+                    <span>Catalog</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+            <div class="row menu-item"  ng-click="navigateTo('app.restaurant')">
+                <div class="col-25">
+                    <i class="fa fa-cutlery"></i>
+                </div>
+                <div class="col-50">
+                    <span>Restaurant</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </div>
+        </div>
+
+        <!--Below code it will show animation when selecting row.-->
+        <md-list ng-if="isAnimated">
+            <md-subheader class="md-warn">Application Storage</md-subheader>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.contractlist')">
+                <div class="col-25">
+                    <i class="fa fa-database"></i>
+                </div>
+                <div class="col-50">
+                    <p>SQLite DB</p>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+
+            </md-list-item>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.notelist')">
+                <div class="col-25">
+                    <i class="fa fa-cube"></i>
+                </div>
+                <div class="col-50">
+                    <p>Local Storage DB</p>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-subheader class="md-warn">Social Network Connect</md-subheader>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.wordpressLogin')">
+                <div class="col-25">
+                    <i class="fa fa-wordpress"></i>
+                </div>
+                <div class="col-50">
+                    <span>WordPress</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+
+            </md-list-item>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.facebookLogin')">
+                <div class="col-25">
+                    <i class="fa fa-facebook"></i>
+                </div>
+                <div class="col-50">
+                    <span>Facebook</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.googlePlusLogin')">
+                <div class="col-25">
+                    <i class="fa fa-google-plus"></i>
+                </div>
+                <div class="col-50">
+                    <span>Google Plus</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.instagramLogin')">
+                <div class="col-25">
+                    <i class="fa fa-instagram"></i>
+                </div>
+                <div class="col-50">
+                    <span>Instagram</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.foursquareLogin')">
+                <div class="col-25">
+                    <i class="fa fa-foursquare"></i>
+                </div>
+                <div class="col-50">
+                    <span>Foursquare</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.dropboxLogin')">
+                <div class="col-25">
+                    <i class="fa fa-dropbox"></i>
+                </div>
+                <div class="col-50">
+                    <span>Dropbox</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-subheader class="md-warn">Share Application Content</md-subheader>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.productList')">
+                <div class="col-25">
+                    <i class="fa fa-share-alt"></i>
+                </div>
+                <div class="col-50">
+                    <span>Social Share</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.contractUs')">
+                <div class="col-25">
+                    <i class="fa fa-inbox"></i>
+                </div>
+                <div class="col-50">
+                    <span>Email & Message</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-subheader class="md-warn">Advertising Application</md-subheader>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.googleAdmob')">
+                <div class="col-25">
+                    <i class="fa fa-money"></i>
+                </div>
+                <div class="col-50">
+                    <span>Google AdMob</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-subheader class="md-warn">Push Notification</md-subheader>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.singlePushNotification')">
+                <div class="col-25">
+                    <i class="fa fa-sign-in fa-rotate-90"></i>
+                </div>
+                <div class="col-50">
+                    <span>Single Push</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.schedulePushNotification')">
+                <div class="col-25">
+                    <i class="fa fa-clock-o"></i>
+                </div>
+                <div class="col-50">
+                    <span>Schedule Push</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-subheader class="md-warn">Map API Connect</md-subheader>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.iosMapConnect')">
+                <div class="col-25">
+                    <i class="fa fa-map-o"></i>
+                </div>
+                <div class="col-50">
+                    <span>IOS Map</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.androidMapConnect')">
+                <div class="col-25">
+                    <i class="fa fa-map"></i>
+                </div>
+                <div class="col-50">
+                    <span>Android Map</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-subheader class="md-warn">Hardware Connect</md-subheader>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.mobileContractList')">
+                <div class="col-25">
+                    <i class="fa fa-users"></i>
+                </div>
+                <div class="col-50">
+                    <span>Mobile Contract</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+
+
+            </md-list-item>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.imagePicker')">
+                <div class="col-25">
+                    <i class="fa fa-picture-o"></i>
+                </div>
+                <div class="col-50">
+                    <span>Image Picker</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.vibration')">
+                <div class="col-25">
+                    <i class="fa fa-asterisk"></i>
+                </div>
+                <div class="col-50">
+                    <span>Vibration</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.flashLight')">
+                <div class="col-25">
+                    <i class="fa fa-bolt"></i>
+                </div>
+                <div class="col-50">
+                    <span>Flashlight</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.deviceInformation')">
+                <div class="col-25">
+                    <i class="fa fa-info"></i>
+                </div>
+                <div class="col-50">
+                    <span>Device Info</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-subheader class="md-warn">Material User Interface</md-subheader>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.defaultUI')">
+                <div class="col-25">
+                    <i class="fa fa-bookmark-o"></i>
+                </div>
+                <div class="col-50">
+                    <span>Default UI</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-subheader class="md-warn">Themes</md-subheader>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.tryAppNoBackBtn')">
+                <div class="col-25">
+                    <i class="fa fa-diamond"></i>
+                </div>
+                <div class="col-50">
+                    <span>Try App</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.pricing')">
+                <div class="col-25">
+                    <i class="fa fa-line-chart"></i>
+                </div>
+                <div class="col-50">
+                    <span>Pricing</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.menuDashboard')">
+                <div class="col-25">
+                    <i class="fa fa-th-large"></i>
+                </div>
+                <div class="col-50">
+                    <span>Menu Dashboard</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.expense')">
+                <div class="col-25">
+                    <i class="fa fa-suitcase"></i>
+                </div>
+                <div class="col-50">
+                    <span>Expense</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.newsFeed')">
+                <div class="col-25">
+                    <i class="fa fa-newspaper-o"></i>
+                </div>
+                <div class="col-50">
+                    <span>News Feed</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.onlineCourse')">
+                <div class="col-25">
+                    <i class="fa fa-graduation-cap"></i>
+                </div>
+                <div class="col-50">
+                    <span>Online Course</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.locationFeed')">
+                <div class="col-25">
+                    <i class="fa fa-flag"></i>
+                </div>
+                <div class="col-50">
+                    <span>Location Feed</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.cubeFeed')">
+                <div class="col-25">
+                    <i class="fa fa-cubes"></i>
+                </div>
+                <div class="col-50">
+                    <span>Cube Feed</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.clothShop')">
+                <div class="col-25">
+                    <i class="fa fa-heart"></i>
+                </div>
+                <div class="col-50">
+                    <span>Cloth Shop</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.catalog')">
+                <div class="col-25">
+                    <i class="fa fa-tags"></i>
+                </div>
+                <div class="col-50">
+                    <span>Catalog</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-list-item-default row" ng-click="navigateTo('app.restaurant')">
+                <div class="col-25">
+                    <i class="fa fa-cutlery"></i>
+                </div>
+                <div class="col-50">
+                    <span>Restaurant</span>
+                </div>
+                <div class="col-25 menu-more">
+                    <i class="ion-android-more-vertical"></i>
+                </div>
+            </md-list-item>
+        </md-list>
+        <!--end list section-->
+    </ion-content><!--end dashboard section-->
+</ion-view>

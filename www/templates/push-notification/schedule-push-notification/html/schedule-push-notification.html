@@ -1,0 +1,59 @@
+<!--View Information-->
+<!--View name : Schedule Push Notification-->
+<!--Controller name : schedulePushNotificationCtrl-->
+<!--Controller path : www/templates/push-notification/schedule-push-notification/js/controllers.js-->
+<!--State name : app.schedulePushNotification-->
+<!--URL : #app/schedulePushNotification-->
+
+<ion-view title="Schedule Push Notification">
+    <!--push notification section-->
+    <ion-content id="push-notification">
+        <!--header section-->
+        <form>
+            <div>
+                <i class="fa fa-clock-o  md-primary-color"></i>
+            </div>
+            <div class="sub-header">Schedule Push Notification</div>
+            <br/>
+        </form><!--end header section-->
+
+        <!--notification option section-->
+        <div class="notification-option">
+
+            <md-input-container md-no-float="">
+                <input ng-model="notificationMessage" placeholder="Notification Message Here.">
+            </md-input-container>
+
+            <md-input-container md-no-float="">
+                <input ng-model="startNotificationIn" placeholder="How many second to start send? " numbers-only  type="tel">
+            </md-input-container>
+
+            <md-input-container md-no-float="">
+                <md-select ng-model="mdSelectValue" aria-label="md-option">
+                    <md-option value="minute">Send Every Minute </md-option>
+                    <md-option value="hour">Send Every Hour </md-option>
+                    <md-option value="week">Send Every Week </md-option>
+                    <md-option value="month">Send Every Month </md-option>
+                    <md-option value="year">Send Every Year </md-option>
+                    <md-option value="day">Send Every Day </md-option>
+                </md-select>
+            </md-input-container>
+
+            <a class="md-raised social-button md-button md-default-theme material-background"
+               ng-click="schedulePush(notificationMessage,startNotificationIn,mdSelectValue)">
+                Send Push Notification
+            </a>
+            <br/>
+            <a class="md-raised social-button md-button md-default-theme material-background"
+               ng-click="clearAllNotification()">
+                Clear All Push Notification
+            </a>
+
+            <!--footer section-->
+            <div class="footer">
+                Push Notification will show at <br/> Notification center of your devise.
+            </div><!--end footer section-->
+        </div><!--end notification option section-->
+    </ion-content><!--end push notification section-->
+</ion-view>
+

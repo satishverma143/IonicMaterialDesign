@@ -1,0 +1,131 @@
+<!--View Information-->
+<!--View name : Product Checkout-->
+<!--Controller name : productCheckoutCtrl-->
+<!--Controller path : www/templates/share-application-content/social-share/js/controllers.js-->
+<!--State name : app.productCheckout-->
+<!--URL : #app/productCheckout-->
+
+<ion-view view-title="Basket">
+    <!--left button on navigation bar-->
+    <ion-nav-buttons side="left">
+        <a ng-click="$ionicGoBack()" class="button back-button buttons button-clear header-item nav-back-btn">
+            <i class="ion-android-arrow-back"></i>
+        </a>
+    </ion-nav-buttons><!--end left button on navigation bar-->
+
+    <!--product checkout section-->
+    <!--product checkout header section-->
+    <ion-header-bar class="bar-subheader" id="product-checkout-sub-header">
+        <ion-scroll direction="x" id="product-checkout-product-list">
+
+            <div class="pin">
+                <img ng-src="{{'img/shirt_01.png'}}"/>
+
+                <h1>Plain Shirt</h1>
+
+                <p>
+                    A shite with pain design.
+                </p>
+
+                <div class="pin-footer">
+                    <span class="pin-footer text-left font-sale">$900</span>
+                    <span class="pin-footer text-left font-hot-sale">$90</span>
+                </div>
+            </div>
+            <div class="pin">
+                <img ng-src="{{'img/shirt_02.png'}}"/>
+
+                <h1>Spring Shirt</h1>
+
+                <p>
+                    Made by high quality silk.
+                </p>
+
+                <div class="pin-footer">
+                    <span class="pin-footer text-left font-sale">$100</span>
+                    <span class="pin-footer text-left font-hot-sale">$10</span>
+                </div>
+            </div>
+            <div class="pin">
+                <img ng-src="{{'img/shirt_06.png'}}"/>
+
+                <h1>Green Shirt</h1>
+
+                <p>
+                    A shite with pain design.
+                </p>
+
+                <div class="pin-footer">
+                    <span class="pin-footer text-left font-sale">$190</span>
+                    <span class="pin-footer text-left font-hot-sale">$19</span>
+                </div>
+            </div>
+            <div class="pin">
+                <img ng-src="{{'img/shirt_05.png'}}"/>
+
+                <h1>Plain Shirt</h1>
+
+                <p>
+                    A shite with pain design.
+                </p>
+
+                <div class="pin-footer">
+                    <span class="pin-footer text-left font-sale">$999</span>
+                    <span class="pin-footer text-left font-hot-sale">$99</span>
+                </div>
+            </div>
+        </ion-scroll>
+    </ion-header-bar> <!--end product checkout header section-->
+    <!--product checkout content section-->
+    <ion-content id="product-checkout-content">
+        <div class="row">
+            <div class="col total-summary">
+                TOTAL <span class="font-hot-sale">$218</span>
+            </div>
+        </div>
+        <div class="row credit-card">
+            <div class="col-25 credit-card-icon">
+                <i class="fa fa-credit-card"></i>
+            </div>
+            <div class="col-67 credit-card-number">
+                <span class="card-number"> XXXX XXXX XXXX 9999</span>
+            </div>
+            <div class="col-20">
+                <md-menu md-position-mode="target-right target" class="md-list-item-md-menu-right">
+
+                    <md-icon md-menu-origin ng-click="$mdOpenMenu()" md-svg-icon="more"></md-icon>
+
+                    <md-menu-content width="3">
+                        <md-menu-item>
+                            <a class="md-button md-default-theme"
+                               ng-click="doSomeThing()">
+                                <span class="menu-item-button"> <i class="fa fa-credit-card"></i> : XXXX XXXX XXXX 8888</span>
+                            </a>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <a class="md-button md-default-theme" ng-click="doSomeThing()">
+                                <span class="menu-item-button"> <i class="fa fa-credit-card"></i> : XXXX XXXX XXXX 7777</span>
+                            </a>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </div>
+        </div>
+
+        <div class="row shipping-address">
+            <div class="col-50 address-icon">
+                Shipping Address :
+            </div>
+            <div class="col-50 selected-address">99/999 Ionic Building...</div>
+        </div>
+        <div class="row">
+            <div class="col complete-order">
+                <a ng-click="showConfirmDialog($event)"
+                   class="md-raised social-button md-button md-default-theme material-background">
+                    Complete Order
+                </a>
+            </div>
+        </div>
+    </ion-content><!--end product checkout content section-->
+    <!--end product checkout section-->
+</ion-view>

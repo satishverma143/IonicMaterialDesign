@@ -1,0 +1,132 @@
+<!--View Information-->
+<!--View name : Device Mobile Contract Detail-->
+<!--Controller name : mobileContractDetailCtrl-->
+<!--Controller path : www/templates/hardware-connect/mobile-contract/js/controllers.js-->
+<!--State name : app.mobileContractDetail-->
+<!--URL : #app/mobileContractDetail-->
+
+<ion-view view-title="">
+    <!--left button on navigation bar-->
+    <ion-nav-buttons side="left">
+        <a ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item nav-back-btn">
+            <i class="ion-android-arrow-back"></i>
+        </a>
+    </ion-nav-buttons><!--end left button on navigation bar-->
+
+    <form name="noteForm">
+        <ion-content class="header-in-content">
+            <!--toolbar section-->
+            <md-toolbar class="bar-subheader md-tall md-primary toolbar-medium toolbar-in-content">
+                <div>
+                    <h1>
+                        <i class="ion-android-person"></i>
+                    </h1>
+
+                    <h3> Contract Detail </h3>
+                </div>
+                <a class="md-button md-accent md-fab fab-toolbar-medium"
+                   ng-click="showListBottomSheet($event,contract)"
+                   aria-label="showListBottomSheet">
+                    <i class="ion-android-star"></i>
+                </a>
+            </md-toolbar> <!--end toolbar section-->
+
+            <!--mobile contract detail section-->
+            <div id="mobile-contract-detail-content">
+                <!--input section-->
+                <md-input-container md-no-float>
+                    <i class="ion-android-person"></i>
+                    <input ng-model="contract.name.honorificPrefix" name="firstName" placeholder="Name Prefix">
+                </md-input-container>
+
+                <md-input-container md-no-float>
+                    <i class="ion-android-person"></i>
+                    <input ng-model="contract.name.givenName" name="firstName" required
+                           placeholder="* First Name (required)">
+                </md-input-container>
+
+                <md-input-container md-no-float>
+                    <i class="ion-android-person"></i>
+                    <input ng-model="contract.name.middleName" name="firstName" placeholder="Middle Name">
+                </md-input-container>
+
+                <md-input-container md-no-float>
+                    <i class="ion-android-person"></i>
+                    <input ng-model="contract.name.familyName" name="firstName" placeholder="Last Name">
+                </md-input-container>
+
+                <md-input-container md-no-float>
+                    <i class="ion-android-person"></i>
+                    <input ng-model="contract.name.honorificSuffix" name="firstName" placeholder="Name Suffix">
+                </md-input-container>
+
+                <md-input-container ng-repeat="number in contract.phoneNumbers" md-no-float>
+                    <i class="ion-android-phone-portrait"></i>
+
+                    <input ng-model="number.value" name="telephone" class="input-tel"
+                           placeholder="* Telephone" type="tel">
+
+                    <i ng-show="number.value.length > 0"
+                       ng-click="callTo(number.value)"
+                       class="ion-android-call tel"></i>
+
+                    <i ng-show="number.value.length > 0"
+                       ng-click="sentSms(number.value)"
+                       class="ion-android-textsms message"></i>
+
+                </md-input-container>
+
+                <md-input-container ng-repeat="email in contract.emails" md-no-float>
+                    <i class="ion-android-mail"></i>
+
+                    <input ng-model="email.value" class="input-mail" name="email" placeholder="Email">
+
+                    <i ng-show="email.value.length > 0"
+                       ng-click="sentEmail(email.value)"
+                       class="ion-android-send mail"></i>
+
+                </md-input-container>
+                <!--end input section-->
+            </div> <!--end mobile contract detail section-->
+        </ion-content>
+    </form>
+
+    <!--angular template section-->
+    <script type="text/ng-template" id="mobile-contract-actions-template.html">
+        <md-bottom-sheet class="md-list md-has-header">
+            <h1 class="md-bottom-sheet-header">Contract Actions</h1>
+            <!--list section-->
+            <md-list>
+                <md-list-item>
+                    <a class="md-default-theme md-bottom-sheet-list-item" ng-click="addNumber()">
+                        <i class="ion-android-call"></i>
+                        <span>New Number</span>
+                    </a>
+                </md-list-item>
+                <md-list-item>
+                    <a class="md-default-theme md-bottom-sheet-list-item" ng-click="addMail()">
+                        <i class="ion-android-mail"></i>
+                        <span>New Email</span>
+                    </a>
+                </md-list-item>
+                <md-list-item>
+                    <a class="md-default-theme md-bottom-sheet-list-item"
+                       ng-class="{ 'disabled-link': disableSaveBtn}"
+                       ng-click="saveContract(contract,$event)">
+                        <i class="ion-android-list"></i>
+                        <span>Save</span>
+                    </a>
+                </md-list-item>
+                <md-list-item ng-show="actionDelete">
+                    <a class="md-default-theme md-bottom-sheet-list-item"
+                       ng-click="deleteContract(contract,$event)">
+                        <i class="ion-android-delete"></i>
+                        <span>Remove</span>
+                    </a>
+                </md-list-item>
+            </md-list><!--end list section-->
+
+        </md-bottom-sheet>
+    </script><!--end angular template section-->
+
+</ion-view>

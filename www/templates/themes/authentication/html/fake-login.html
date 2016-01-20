@@ -1,0 +1,39 @@
+<!--View Information-->
+<!--View name : Fake Login-->
+<!--State name : app.fakeLogin-->
+<!--URL : #app/fakeLogin-->
+
+<ion-view title="Sign In">
+    <!--left button on navigation bar-->
+    <ion-nav-buttons side="left">
+        <a ng-click="$ionicGoBack()" class="button back-button buttons button-clear header-item nav-back-btn">
+            <i class="ion-android-arrow-back"></i>
+        </a>
+    </ion-nav-buttons><!--end left button on navigation bar-->
+
+    <!--login content section-->
+    <ion-content id="social-login" class="bg-white">
+        <!--fake login form section-->
+        <form class="fakeLogin-form">
+            <div>
+                <img src="img/app_icon.png"/>
+            </div>
+            <div class="sub-header">Sign in to application</div>
+
+            <div id="fakeLogin">
+                <md-input-container md-no-float="">
+                    <input class="user-name" placeholder="Username">
+                </md-input-container>
+                <hr/>
+                <md-input-container md-no-float="">
+                    <input class="user-password" type="password" placeholder="Password">
+                </md-input-container>
+            </div>
+            <div>
+                <a class="md-raised social-button md-button md-default-theme material-background">
+                    Sign In
+                </a>
+            </div>
+        </form> <!--end fake login form section-->
+    </ion-content><!--end login content section-->
+</ion-view>

@@ -1,0 +1,32 @@
+<!--View Information-->
+<!--View name : Facebook Friend List -->
+<!--Controller name : facebookFriendListCtrl-->
+<!--Controller path : www/templates/social-network-connect/facebook/js/controllers.js-->
+<!--State name : app.facebookFriendList-->
+<!--URL : #app/facebookFriendList-->
+
+<ion-view view-title="Friend List">
+    <!--left button on navigation bar-->
+    <ion-nav-buttons side="left">
+        <a ng-click="$ionicGoBack()" class="button back-button buttons button-clear header-item nav-back-btn">
+            <i class="ion-android-arrow-back"></i>
+        </a>
+    </ion-nav-buttons><!--end left button on navigation bar-->
+
+    <ion-content>
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()">
+        </ion-refresher>
+
+        <!--list section-->
+        <md-list class="md-list-padding-left">
+            <md-list-item ng-repeat="item in friendsList">
+                <img alt="{{item.name}}" ng-src="{{ item.picture.data.url }}" class="md-avatar"/>
+
+                <p>{{ item.name }}</p>
+            </md-list-item>
+        </md-list><!--end list section-->
+
+        <ion-infinite-scroll ng-if="!paging.shouldLoadData" on-infinite="loadMore()" distance="1%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

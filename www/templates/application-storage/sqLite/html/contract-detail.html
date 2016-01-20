@@ -1,0 +1,87 @@
+<!--View Information-->
+<!--View name : Contract Detail-->
+<!--Controller name : contractDetailCtrl-->
+<!--Controller path : www/templates/application-storage/sqLite/js/controllers.js-->
+<!--State name : app.contractdetail-->
+<!--URL : #app/contractdetail-->
+
+<ion-view title="Contract">
+    <!--left button on navigation bar-->
+    <ion-nav-buttons side="left">
+        <a ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item nav-back-btn">
+            <i class="ion-android-arrow-back"></i>
+        </a>
+    </ion-nav-buttons> <!--end left button on navigation bar-->
+
+    <!--contract detail section-->
+    <form name="contractForm">
+        <ion-content id="contract-details-content">
+            <!--contract detail input section-->
+            <md-input-container md-no-float>
+                <i class="ion-android-person"></i>
+                <input ng-model="contract.firstName" name="firstName" required placeholder="* First Name (required)">
+            </md-input-container>
+            <md-input-container md-no-float>
+                <i class="ion-android-people"></i>
+                <input ng-model="contract.lastName" name="lastName" required placeholder="* Last Name (required)">
+            </md-input-container>
+            <md-input-container md-no-float>
+                <i class="ion-android-phone-portrait"></i>
+                <input ng-model="contract.telephone" name="telephone" required placeholder="* Telephone (required)"
+                       type="tel">
+            </md-input-container>
+            <md-input-container md-no-float>
+                <i class="ion-android-mail"></i>
+                <input ng-model="contract.email" name="email" placeholder="Email">
+            </md-input-container>
+            <md-input-container md-no-float>
+                <i class="ion-android-calendar"></i>
+                <input ng-model="contract.createDate" disabled name="dateTime" placeholder="Date Time">
+            </md-input-container>
+            <md-input-container md-no-float>
+                <i class="ion-android-favorite"></i>
+                <input ng-model="contract.age" numbers-only name="age" placeholder="Age" type="tel">
+            </md-input-container><!--end contract detail input section-->
+
+            <!--contract switch section-->
+            <md-switch ng-model="contract.isEnable" ng-disabled="actionDelete">
+                {{(contract.isEnable == true ? 'Enable' : 'Disabled' ) }} Contract
+            </md-switch><!--end contract switch section-->
+
+        </ion-content>
+        <div class="footer-fab-bar">
+            <a class="md-button md-accent md-fab fab-footer" ng-click="showListBottomSheet($event,contractForm)"
+               aria-label="Contract Form Actions">
+                <i class="ion-android-star"></i>
+            </a>
+        </div>
+    </form><!--end contract detail section-->
+
+    <!--angular template section-->
+    <script type="text/ng-template" id="contract-actions-template">
+        <md-bottom-sheet class="md-list md-has-header">
+            <h1 class="md-bottom-sheet-header">Contract Actions</h1>
+            <md-list>
+                <!--md bottom sheet list item-->
+                <md-list-item>
+                    <a class="md-default-theme md-bottom-sheet-list-item"
+                       ng-class="{ 'disabled-link': disableSaveBtn}"
+                       ng-click="saveContract(contract,$event)">
+                        <i class="ion-android-list"></i>
+                        <span>Save Contract</span>
+                    </a>
+                </md-list-item>
+
+                <md-list-item ng-show="actionDelete">
+                    <a class="md-default-theme md-bottom-sheet-list-item"
+                       ng-click="deleteContract(contract,$event)">
+                        <i class="ion-android-delete"></i>
+                        <span>Remove Contract</span>
+                    </a>
+                </md-list-item>
+                <!--end md bottom sheet list item-->
+            </md-list>
+        </md-bottom-sheet>
+    </script><!--end angular template section-->
+
+</ion-view>

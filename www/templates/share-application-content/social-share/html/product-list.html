@@ -1,0 +1,86 @@
+<!--View Information-->
+<!--View name : Product List-->
+<!--Controller name : productListCtrl-->
+<!--Controller path : www/templates/share-application-content/social-share/js/controllers.js-->
+<!--State name : app.productList-->
+<!--URL : #app/productList-->
+
+<ion-view view-title="Material Shop">
+    <!--product list section-->
+    <ion-content id="product-list-content" class="fade-in">
+
+        <!--toolbar section-->
+        <md-toolbar class="bar-subheader md-tall md-primary toolbar-medium toolbar-in-content">
+            <div>
+                <h1>SALE 90% OFF</h1>
+
+                <h2>Order Now !!</h2>
+
+                <h2>
+                    <i class="fa fa-diamond"></i>
+                </h2>
+            </div>
+        </md-toolbar><!--end toolbar section-->
+
+        <div class="row">
+            <div class="col">
+                <!--pin section-->
+                <div class="pin" ng-if="$even" ng-repeat="product in productList"
+                     ng-click="navigateTo('app.productDetail',product)">
+                    <img ng-src="{{product.img}}"/>
+
+                    <h1>{{product.title}}</h1>
+
+                    <p>
+                        {{product.detail}}
+                    </p>
+
+                    <div class="pin-footer">
+                        $<span class="pin-footer text-left font-sale">{{product.price}}</span>
+                        <span class="pin-footer text-left font-hot-sale">${{product.promotionPrice}}</span>
+                        <span class="pin-footer text-right">+Add</span>
+                    </div>
+                </div>  <!--end pin section-->
+            </div>
+
+            <div class="col">
+                <!--pin section-->
+                <div class="pin" ng-if="$odd" ng-repeat="product in productList"
+                     ng-click="navigateTo('app.productDetail',product)">
+                    <img ng-src="{{product.img}}"/>
+
+                    <h1>{{product.title}}</h1>
+
+                    <p>
+                        {{product.detail}}
+                    </p>
+
+                    <div class="pin-footer">
+                        $<span class="pin-footer text-left font-sale">{{product.price}}</span>
+                        <span class="pin-footer text-left font-hot-sale">${{product.promotionPrice}}</span>
+                        <span class="pin-footer text-right">+Add</span>
+                    </div>
+                </div>  <!--end pin section-->
+            </div>
+        </div>
+
+        <ion-infinite-scroll on-infinite="loadMore()" distance="1%">
+        </ion-infinite-scroll>
+    </ion-content><!--end product list section-->
+
+    <!--button section-->
+    <div class="footer-fab-bar">
+        <a class="md-button md-accent md-fab fab-footer" ng-click="navigateTo('app.productCheckout')" aria-label="Add">
+            <i class="fa fa-shopping-cart"></i>
+        </a>
+    </div>
+    <!--end button section-->
+
+    <!--loading progress-->
+    <div id="product-list-loading-progress" class="loading-progress fade-in">
+        <ion-spinner ng-if="!isAndroid" class="progress-circular"></ion-spinner>
+        <md-progress-circular ng-if="isAndroid" md-mode="indeterminate"></md-progress-circular>
+    </div><!--end loading progress-->
+
+
+</ion-view>

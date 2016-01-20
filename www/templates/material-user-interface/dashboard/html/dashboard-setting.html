@@ -1,0 +1,32 @@
+<!--View Information-->
+<!--View name : Dashboard Setting-->
+<!--Controller name : dashboardSettingCtrl-->
+<!--Controller path : www/templates/material-user-interface/dashboard/js/controllers.js-->
+<!--State name : app.dashboardSetting-->
+<!--URL : #app/dashboardSetting-->
+
+<ion-view title="Dashboard Setting">
+    <!--left button on navigation bar-->
+    <ion-nav-buttons side="left">
+        <a ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item nav-back-btn">
+            <i class="ion-android-arrow-back "></i>
+        </a>
+    </ion-nav-buttons><!--end left button on navigation bar-->
+
+    <ion-content scroll="false">
+        <!--list section-->
+        <md-list>
+            <md-subheader class="md-warn">The setting will change Dashboard View</md-subheader>
+            <md-list-item class="md-list-item-default" ng-click="navigateTo('app.dashboard',true)">
+                <i class="fa fa-play"></i>
+
+                <p>Enable Row Animation</p>
+            </md-list-item>
+            <md-list-item class="md-list-item-default" ng-click="navigateTo('app.dashboard',false)">
+                <i class="fa fa-stop"></i>
+
+                <p>Disable Row Animation</p>
+            </md-list-item>
+        </md-list><!--end list section-->
+    </ion-content>
+</ion-view>

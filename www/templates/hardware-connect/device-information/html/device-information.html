@@ -1,0 +1,78 @@
+<!--View Information-->
+<!--View name : Device Information-->
+<!--Controller name : deviceInformationCtrl-->
+<!--Controller path : www/templates/hardware-connect/device-information/js/controllers.js-->
+<!--State name : app.deviceInformation-->
+<!--URL : #app/deviceInformation-->
+
+<ion-view title="">
+
+    <ion-content scroll="false">
+        <!--toolbar section-->
+        <md-toolbar class="bar-subheader md-tall md-primary toolbar-medium toolbar-in-content">
+            <div>
+                <h1>
+                    <i class="fa fa-info-circle"></i>
+                </h1>
+
+                <h3> Device Information </h3>
+            </div>
+        </md-toolbar> <!--end toolbar section-->
+
+        <!--device information section-->
+        <!--lise section-->
+        <md-list id="device-information-content" class="fade-in">
+            <md-list-item class="row">
+                <div class="col-50 title">
+                    Platform :
+                </div>
+                <div class="col-50">
+                    {{deviceInformation.platform}}
+                </div>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-list-item class="row">
+                <div class="col-50 title">
+                    Model :
+                </div>
+                <div class="col-50">
+                    {{deviceInformation.model}}
+                </div>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-list-item class="row">
+                <div class="col-50 title">
+                    Version :
+                </div>
+                <div class="col-50">
+                    {{deviceInformation.version}}
+                </div>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-list-item class="row">
+                <div class="col-50 title">
+                    Manufacturer :
+                </div>
+                <div class="col-50">
+                    {{deviceInformation.manufacturer}}
+                </div>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-list-item>
+                <div class="col">
+                    {{deviceInformation.uuid}}
+                </div>
+            </md-list-item>
+            <md-divider></md-divider>
+        </md-list>
+        <!--end lise section-->
+        <!--end device information section-->
+    </ion-content>
+
+    <!--loading progress-->
+    <div id="device-information-loading-progress" class="loading-progress fade-in">
+        <ion-spinner ng-if="!isAndroid" class="progress-circular"></ion-spinner>
+        <md-progress-circular ng-if="isAndroid" md-mode="indeterminate"></md-progress-circular>
+    </div><!--end loading progress-->
+
+</ion-view>

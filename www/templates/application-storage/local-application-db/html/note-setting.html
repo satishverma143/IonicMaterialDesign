@@ -1,0 +1,56 @@
+<!--View Information-->
+<!--View name : Note Setting-->
+<!--Controller name : noteSettingCtrl-->
+<!--Controller path : www/templates/application-storage/local-application-db/js/controllers.js-->
+<!--State name : app.notesetting-->
+<!--URL : #app/notesetting-->
+
+<ion-view title="Local Storage Setting">
+    <!--left button on navigation bar-->
+    <ion-nav-buttons side="left">
+        <a ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item nav-back-btn">
+            <i class="ion-android-arrow-back"></i>
+        </a>
+    </ion-nav-buttons><!--end left button on navigation bar-->
+
+    <ion-content scroll="false">
+        <!--list section-->
+        <md-list>
+            <!--md list item default-->
+            <md-subheader class="md-warn">The setting will change Local Storage data</md-subheader>
+
+            <md-list-item class="md-list-item-default" ng-click="navigateTo('app.notelist',true)">
+                <i class="fa fa-play"></i>
+
+                <p>Enable Row Animation</p>
+            </md-list-item>
+
+            <md-list-item class="md-list-item-default" ng-click="navigateTo('app.notelist',false)">
+                <i class="fa fa-stop"></i>
+
+                <p>Disable Row Animation</p>
+            </md-list-item>
+
+            <md-list-item class="md-list-item-default" ng-click="clearAllData($event)">
+                <i class="ion-android-delete"></i>
+
+                <p>Clear All Data</p>
+            </md-list-item>
+            <md-list-item class="md-list-item-default" ng-click="$ionicGoBack()">
+                <i class="ion-android-refresh"></i>
+
+                <p>Refresh Data</p>
+            </md-list-item>
+            <md-list-item class="md-list-item-default">
+                <i class="ion-android-list"></i>
+
+                <p>Note Count</p>
+                <span>{{noteLenght}}</span>
+
+            </md-list-item>
+            <!--end md list item default-->
+        </md-list>
+        <!--end list section-->
+    </ion-content>
+
+</ion-view>

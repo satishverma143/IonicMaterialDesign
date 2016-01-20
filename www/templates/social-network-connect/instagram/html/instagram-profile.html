@@ -1,0 +1,101 @@
+<!--View Information-->
+<!--View name : Instagram Profile-->
+<!--Controller name : instagramProfileCtrl-->
+<!--Controller path : www/templates/social-network-connect/instagram/js/controllers.js-->
+<!--State name : app.instagramProfile-->
+<!--URL : #app/instagramProfile-->
+
+<ion-view title="Social">
+    <!--left button on navigation bar-->
+    <ion-nav-buttons side="left">
+        <a ng-click="$ionicGoBack()" class="button back-button buttons button-clear header-item nav-back-btn">
+            <i class="ion-android-arrow-back"></i>
+        </a>
+    </ion-nav-buttons><!--end left button on navigation bar-->
+
+    <ion-content>
+        <div class="toolbar-image-cover material-background-nav-bar">
+            <img ng-src="{{userInfo.pictureProfileUrl}}" class="user-img"/>
+        </div>
+        <md-tabs class="ng-hide" ng-show="!loading" md-dynamic-height md-border-bottom>
+            <md-tab label="Profile">
+                <!--social profile content section-->
+                <md-content id="social-profile-content" class="md-padding">
+
+                    <div class="row">
+                        <div class="col-33">
+                            <i class="ion-card"></i>
+                        </div>
+                        <div class="col-66">{{userInfo.id}}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-33">
+                            <i class="ion-android-person"></i>
+                        </div>
+                        <div class="col-66">{{userInfo.name}}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-33">
+                            <i class="ion-information-circled"></i>
+                        </div>
+                        <div class="col-66">{{userInfo.bio}}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-33">
+                            <i class="ion-android-desktop"></i>
+                        </div>
+                        <div class="col-66">{{userInfo.website}}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-33">
+                            <i class="ion-images"></i>
+                        </div>
+                        <div class="col-66">{{userInfo.post}}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-33">
+                            <i class="ion-android-people"></i>
+                        </div>
+                        <div class="col-66">{{userInfo.followers}}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-33">
+                            <i class="ion-android-person-add"></i>
+                        </div>
+                        <div class="col-66">{{userInfo.following}}</div>
+                    </div>
+
+                </md-content><!--end social profile content section-->
+            </md-tab>
+            <md-tab label="More">
+                <md-content class="md-padding">
+                    <!--list section-->
+                    <md-list>
+                        <md-subheader class="instagram-color">More Instagram APIs.</md-subheader>
+                        <md-list-item class="md-list-item-default"
+                                      ng-click="navigateTo('app.instagramFeed')">
+                            <i class="ion-android-list"></i>
+
+                            <p>View Feed</p>
+                        </md-list-item>
+                        <md-list-item class="md-list-item-default" ng-click="logOut($event)">
+                            <i class="ion-locked"></i>
+
+                            <p>Log Out</p>
+                        </md-list-item>
+                    </md-list><!--end list section-->
+                </md-content>
+            </md-tab>
+        </md-tabs>
+
+        <!--social loading progress section-->
+        <md-progress-circular ng-show="loading" class="md-warn md-progress-social-profile ng-hide"
+                              md-mode="indeterminate"></md-progress-circular><!--end social loading progress section-->
+    </ion-content>
+</ion-view>

@@ -1,0 +1,79 @@
+<!--View Information-->
+<!--View name : Wordpress Post-->
+<!--Controller name : wordpressPostCtrl-->
+<!--Controller path : www/templates/social-network-connect/wordpress/js/controllers.js-->
+<!--State name : app.wordpressPost-->
+<!--URL : #app/wordpressPost-->
+
+<ion-view view-title="Post Detail">
+    <!--left button on navigation bar-->
+    <ion-nav-buttons side="left">
+        <a ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item nav-back-btn">
+            <i class="ion-android-arrow-back"></i>
+        </a>
+    </ion-nav-buttons><!--end left button on navigation bar-->
+    <!--wordpress post content section-->
+    <ion-content id="wordpress-post-content" class="fade-in">
+        <md-card-content>
+
+            <p class="feed-name">{{post.title}}</p>
+            <!--wordpress content section-->
+            <div class="wp-content" data-ng-bind-html="post.content"></div><!--end wordpress content section-->
+            <md-list-item class="md-2-line md-no-proxy" role="listitem">
+                <img ng-src="{{post.author.avatar}}" class="md-avatar">
+
+                <div class="md-list-item-text">
+                    <h3>{{post.author.username}}</h3>
+
+                    <p>{{post.date | date:"short" }}</p>
+                </div>
+            </md-list-item>
+
+        </md-card-content>
+        <!--card footer section-->
+        <div class="social-card-wp-footer row" ng-show="post.terms.category != null ?  true : false">
+            <div class="col">
+                <i class="ion-android-folder"></i>
+                <span ng-repeat="category in post.terms.category">
+                    {{category.name}}{{($index != post.terms.category.length-1) ? ",":""}}
+                </span>
+            </div>
+        </div>
+
+        <div class="social-card-wp-footer row" ng-show="post.terms.post_tag != null ?  true : false">
+            <div class="col">
+                <i class="ion-pricetags"></i>
+                <span ng-repeat="tag in post.terms.post_tag">
+                    {{tag.name}}{{($index != post.terms.post_tag.length-1) ? ",":""}}
+                </span>
+            </div>
+        </div>
+        <!--end card footer section-->
+
+        <!--list comment section-->
+        <md-list class="comment">
+            <md-subheader>Comments</md-subheader>
+            <md-list-item class="md-3-line" ng-repeat="comment in comments">
+                <img ng-src="{{comment.author.avatar}}" class="md-avatar"/>
+
+                <div class="md-list-item-text">
+                    <h3>{{comment.author.name}}</h3>
+
+                    <p data-ng-bind-html="comment.content"></p>
+                </div>
+                <md-divider></md-divider>
+            </md-list-item>
+
+        </md-list><!--end list comment section-->
+
+
+    </ion-content><!--end wordpress post content section-->
+
+    <!--loading progress-->
+    <div id="wordpress-post-loading-progress" class="loading-progress fade-in">
+        <ion-spinner ng-if="!isAndroid" class="progress-circular"></ion-spinner>
+        <md-progress-circular ng-if="isAndroid" class="md-warn md-progress-social-profile"
+                              md-mode="indeterminate"></md-progress-circular>
+    </div><!--end loading progress-->
+
+</ion-view>

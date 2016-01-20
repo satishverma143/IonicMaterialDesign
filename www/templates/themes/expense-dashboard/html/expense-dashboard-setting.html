@@ -1,0 +1,32 @@
+<!--View Information-->
+<!--View name : Expense Setting-->
+<!--Controller name : expenseDashboardSettingCtrl-->
+<!--Controller path : www/templates/themes/expense-dashboard/js/controllers.js-->
+<!--State name : app.expenseSetting-->
+<!--URL : #app/expenseSetting-->
+
+<ion-view title="Expense Setting">
+    <!--left button on navigation bar-->
+    <ion-nav-buttons side="left">
+        <a ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item nav-back-btn">
+            <i class="ion-android-arrow-back "></i>
+        </a>
+    </ion-nav-buttons><!--end left button on navigation bar-->
+
+    <ion-content scroll="false">
+        <!--list section-->
+        <md-list>
+            <md-subheader class="md-warn">The setting will change Expense View</md-subheader>
+            <md-list-item class="md-list-item-default" ng-click="navigateTo('app.expense',true)">
+                <i class="fa fa-play"></i>
+
+                <p>Enable Row Animation</p>
+            </md-list-item>
+            <md-list-item class="md-list-item-default" ng-click="navigateTo('app.expense',false)">
+                <i class="fa fa-stop"></i>
+
+                <p>Disable Row Animation</p>
+            </md-list-item>
+        </md-list><!--end list section-->
+    </ion-content>
+</ion-view>

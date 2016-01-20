@@ -1,0 +1,54 @@
+<!--View Information-->
+<!--View name : Contract Setting-->
+<!--Controller name : contractSettingCtrl-->
+<!--Controller path : www/templates/application-storage/sqLite/js/controllers.js-->
+<!--State name : app.contractsetting-->
+<!--URL : #app/contractsetting-->
+
+<ion-view title="SQLite Setting">
+    <!--left button on navigation bar-->
+    <ion-nav-buttons side="left">
+        <a ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item nav-back-btn">
+            <i class="ion-android-arrow-back "></i>
+        </a>
+    </ion-nav-buttons><!--end left button on navigation bar-->
+
+    <ion-content scroll="false">
+        <!--list section-->
+        <md-list>
+            <md-subheader class="md-warn">The setting will change SQLite data</md-subheader>
+
+            <md-list-item class="md-list-item-default" ng-click="navigateTo('app.contractlist',true)">
+                <i class="fa fa-play"></i>
+
+                <p>Enable Row Animation</p>
+            </md-list-item>
+
+            <md-list-item class="md-list-item-default" ng-click="navigateTo('app.contractlist',false)">
+                <i class="fa fa-stop"></i>
+
+                <p>Disable Row Animation</p>
+            </md-list-item>
+
+            <md-list-item class="md-list-item-default" ng-click="clearAllData($event)">
+                <i class="ion-android-delete"></i>
+
+                <p>&nbsp;Clear All Data</p>
+            </md-list-item>
+            <md-list-item class="md-list-item-default" ng-click="$ionicGoBack()">
+                <i class="ion-android-refresh"></i>
+
+                <p>Refresh Data</p>
+            </md-list-item>
+            <md-list-item class="md-list-item-default">
+                <i class="fa fa-user"></i>
+
+                <p>Contract Count</p>
+                <span ng-show="loading">...</span>
+                <span ng-show="!loading">{{contractsCount.length}}</span>
+
+            </md-list-item>
+
+        </md-list><!--end list section-->
+    </ion-content>
+</ion-view>

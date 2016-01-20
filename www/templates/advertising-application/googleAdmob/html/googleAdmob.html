@@ -1,0 +1,29 @@
+<!--View detail-->
+<!--View name : google AdMob-->
+<!--Controller name : googleAdmobCtrl-->
+<!--Controller path : www/templates/advertising-application/googleAdmob/js/controllers.js-->
+<!--State name : app.googleAdmob-->
+<!--URL : #app/googleAdmob-->
+
+<ion-view title="Google AdMob">
+    <!--google admob section-->
+    <ion-content scroll="false">
+        <!--icon section-->
+        <div class="row">
+            <div id="google-admob-icon" class="col">
+                <i ng-class="{'google-admob-color' : isTurnOn}" class="ion-cash center-screen icon-google-admob"></i>
+            </div>
+        </div> <!--end icon section-->
+
+        <div class="row">
+            <!--control section-->
+            <div id="google-admob-control" class="col">
+                <p>Google AdMob</p>
+                <a ng-class="{'md-warn' : isTurnOn}" class="md-raised md-primary md-button md-default-theme"
+                   ng-click="adMob()">
+                    Turn {{isTurnOn == true ? 'OFF' : 'On'}}
+                </a>
+            </div> <!--end control section-->
+        </div>
+    </ion-content> <!--end google admob section-->
+</ion-view>

@@ -1,0 +1,139 @@
+<!--View Information-->
+<!--View name : Expense Dashboard-->
+<!--Controller name : expenseDashboardCtrl-->
+<!--Controller path : www/templates/themes/expense-dashboard/js/controllers.js-->
+<!--State name : app.expense-->
+<!--URL : #app/expense-->
+
+<ion-view title="Expense" id="expense-dashboard">
+
+    <!--right button on navigation bar-->
+    <ion-nav-buttons side="right">
+        <md-button class="md-icon-button ion-nav-button-right" ng-click="goToSetting()"
+                   aria-label="Setting">
+            <i class="ion-android-more-vertical"></i>
+        </md-button>
+    </ion-nav-buttons> <!--end right button on navigation bar-->
+
+    <!--expense toolbar section-->
+    <md-toolbar class="bar-subheader md-tall md-primary toolbar-expense">
+        <div>
+            <img src="img/profileAvatar.jpg" class="user-img"/>
+
+            <h1>John Able</h1>
+
+            <h2>Material Design</h2>
+        </div>
+        <a class="md-button md-accent md-fab fab-toolbar-medium" aria-label="Add">
+            <i class="icon ion-plus"></i>
+        </a>
+    </md-toolbar><!--end expense toolbar section-->
+
+    <!--expense content section-->
+    <ion-content id="expense-dashboard-content">
+
+        <!--Below code it will disable animation to better performance-->
+        <div ng-if="!isAnimated" class="list-expense-menu">
+            <div class="list-expense-menu-item"  ng-click="doSomeThing()">
+                <div class="row">
+                    <div class="col-20">
+                        <i class="fa fa-money"></i>
+                    </div>
+                    <div class="col-80 menu">
+                        <p class="header">Add Budget</p>
+
+                        <p class="detail">Add your budget to start saving.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-expense-menu-item"  ng-click="doSomeThing()">
+                <div class="row">
+                    <div class="col-20">
+                        <i class="fa fa-sign-in"></i>
+                    </div>
+                    <div class="col-80 menu">
+                        <p class="header">Expense History</p>
+
+                        <p class="detail">View expense history report</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-expense-menu-item"  ng-click="doSomeThing()">
+                <div class="row">
+                    <div class="col-20">
+                        <i class="fa fa-inbox"></i>
+                    </div>
+                    <div class="col-80 menu">
+                        <p class="header">Export to e-Mail</p>
+
+                        <p class="detail">Export expense to e-Mail</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-expense-menu-item"  ng-click="doSomeThing()">
+                <div class="row">
+                    <div class="col-20">
+                        <i class="fa fa-line-chart"></i>
+                    </div>
+                    <div class="col-80 menu">
+                        <p class="header">Summary Report</p>
+
+                        <p class="detail">View summary report.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Below code it will show animation when selecting row.-->
+        <md-list ng-if="isAnimated">
+            <md-list-item class="row" ng-click="doSomeThing()">
+                <div class="col-20 icon">
+                    <i class="fa fa-money"></i>
+                </div>
+                <div class="col-80 menu">
+                    <p class="header">Add Budget</p>
+
+                    <p class="detail">Add your budget to start saving.</p>
+                </div>
+            </md-list-item>
+            <md-divider></md-divider>
+
+            <md-list-item class="row" ng-click="doSomeThing()">
+                <div class="col-20 icon">
+                    <i class="fa fa-sign-in"></i>
+                </div>
+                <div class="col-80 menu">
+                    <p class="header">Expense History</p>
+
+                    <p class="detail">View expense history report</p>
+                </div>
+            </md-list-item>
+            <md-divider></md-divider>
+
+            <md-list-item class="row" ng-click="doSomeThing()">
+                <div class="col-20 icon">
+                    <i class="fa fa-inbox"></i>
+                </div>
+                <div class="col-80 menu">
+                    <p class="header">Export to e-Mail</p>
+
+                    <p class="detail">Export expense to e-Mail</p>
+                </div>
+            </md-list-item>
+            <md-divider></md-divider>
+
+            <md-list-item class="row" ng-click="doSomeThing()">
+                <div class="col-20 icon">
+                    <i class="fa fa-line-chart"></i>
+                </div>
+                <div class="col-80 menu">
+                    <p class="header">Summary Report</p>
+
+                    <p class="detail">View summary report.</p>
+                </div>
+            </md-list-item>
+            <md-divider></md-divider>
+
+        </md-list>
+    </ion-content><!--end expense content section-->
+</ion-view>

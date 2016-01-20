@@ -1,0 +1,30 @@
+<!--View Information-->
+<!--View name : Device Vibration-->
+<!--Controller name : vibrationCtrl-->
+<!--Controller path : www/templates/hardware-connect/vibration/js/controllers.js-->
+<!--State name : app.vibration-->
+<!--URL : #app/vibration-->
+
+<ion-view title="Vibration">
+    <!--vibration section-->
+    <ion-content  scroll="false">
+
+        <div class="row">
+            <!--vibration icon section-->
+            <div id="vibration-icon" class="col">
+                <i ng-class="{'vibration-sad-color' : vibrateing}"
+                   class="ion-android-happy center-screen icon-vibration"></i>
+            </div>
+            <!--end vibration icon section-->
+        </div>
+        <div class="row">
+            <!--vibration control section-->
+            <div id="vibration-control" class="col">
+                <p>Devise Vibration</p>
+                <a class="md-raised md-warn md-button md-default-theme" ng-click="vibrate()">
+                    Vibrate
+                </a>
+            </div><!--end vibration control section-->
+        </div>
+    </ion-content><!--end vibration section-->
+</ion-view>

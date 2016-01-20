@@ -1,0 +1,49 @@
+<!--View Information-->
+<!--View name : Fake Sign Up-->
+<!--State name : app.fakeSignUp-->
+<!--URL : #app/fakeSignUp-->
+
+<ion-view title="Material Design">
+    <!--left button on navigation bar-->
+    <ion-nav-buttons side="left">
+        <a ng-click="$ionicGoBack()" class="button back-button buttons button-clear header-item nav-back-btn">
+            <i class="ion-android-arrow-back"></i>
+        </a>
+    </ion-nav-buttons><!--end left button on navigation bar-->
+
+    <!--social sign up section-->
+    <ion-content id="social-sign-up-content">
+        <div class="app-icon">
+            <img src="img/app_icon.png" class="md-card-image">
+        </div>
+        <!--input section-->
+        <md-input-container md-no-float="">
+            <div>
+                <input class="user-name" placeholder="Username">
+            </div>
+        </md-input-container>
+        <md-input-container md-no-float="">
+            <div>
+                <input type="password" class="user-name" placeholder="Password">
+            </div>
+        </md-input-container>
+        <md-input-container md-no-float="">
+            <div>
+                <input type="password" class="user-name" placeholder="Confirm Password">
+            </div>
+        </md-input-container>
+        <md-input-container md-no-float="">
+            <div>
+                <input class="user-name" placeholder="Mail">
+            </div>
+        </md-input-container>
+        <md-checkbox aria-label="CheckboxTerms">
+            I accept terms and conditions.
+        </md-checkbox>
+        <!--end input section-->
+        <a class="md-raised social-button md-button md-default-theme material-background">
+            Sign Up
+        </a>
+
+    </ion-content><!--end social sign up section-->
+</ion-view>

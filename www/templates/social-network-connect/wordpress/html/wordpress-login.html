@@ -1,0 +1,36 @@
+<!--View Information-->
+<!--View name : Wordpress Login-->
+<!--Controller name : wordpressLoginCtrl-->
+<!--Controller path : www/templates/social-network-connect/wordpress/js/controllers.js-->
+<!--State name : app.wordpressLogin-->
+<!--URL : #app/wordpressLogin-->
+
+<ion-view title="Wordpress Connect">
+    <!--login content section-->
+    <ion-content scroll="false" id="social-login">
+        <form>
+
+            <div>
+                <i class="fa fa-wordpress wordpress-color"></i>
+            </div>
+            <div class="sub-header">Connect data with Wordpress.</div>
+
+
+            <div class="wordpress-login">
+
+                <md-input-container md-no-float="">
+                    <input ng-model="wpUrl" placeholder="Wordpress address url.">
+                </md-input-container>
+                <a class="md-raised social-button md-button md-default-theme wordpress-background {{ wpUrl.length ==0 ? 'disabled-link' : ''}}"
+                   ng-click="login(wpUrl)">
+                    GO TO WORDPRESS
+                </a>
+
+
+                <div class="footer">
+                    Plugins json REST Api is required.
+                </div>
+            </div>
+        </form>
+    </ion-content><!--end login content section-->
+</ion-view>

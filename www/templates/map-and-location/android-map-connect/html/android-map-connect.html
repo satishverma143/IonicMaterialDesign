@@ -1,0 +1,36 @@
+<!--View Information-->
+<!--View name : Android Map Connect-->
+<!--Controller name : androidMapConnectCtrl-->
+<!--Controller path : www/templates/map-and-location/android-map-connect/js/controllers.js-->
+<!--State name : app.androidMapConnect-->
+<!--URL : #app/androidMapConnect-->
+
+<ion-view title="Android Map Connect">
+    <!--map and location section-->
+    <ion-content id="map-and-location">
+        <!--header section-->
+        <form>
+            <div>
+                <i class="fa fa-map md-primary-color"></i>
+            </div>
+            <div class="sub-header">Map Connect for Android</div>
+            <br/>
+        </form><!--end header section-->
+
+        <!--map input option section-->
+        <div class="map-input-option">
+            <md-input-container md-no-float="">
+                <input ng-model="destinationLocation" placeholder="Destination Location lat,long">
+            </md-input-container>
+            <a class="md-raised social-button md-button md-default-theme material-background"
+               ng-click="openMap(destinationLocation)">
+               Connect to Google Map
+            </a>
+
+            <!--footer section-->
+            <div class="footer">
+                This feature can use on Android devise only.
+            </div><!--end footer section-->
+        </div><!--end map input option section-->
+    </ion-content><!--map and location section-->
+</ion-view>

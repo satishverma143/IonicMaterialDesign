@@ -1,0 +1,66 @@
+﻿[
+  {
+    "title": "Plain Shirt",
+    "detail": "A shirt with plain design.",
+    "fullDetail": "Plain design shirt. Created by material team.",
+    "img": "img/shirt_01.png",
+    "price": "590",
+    "promotionPrice": "59"
+  },
+  {
+    "title": "Spring Shirt",
+    "detail": "Made by high quality silk",
+    "fullDetail": "Plain design shirt. Created by material team. Made by high quality material.",
+    "img": "img/shirt_05.png",
+    "price": "800",
+    "promotionPrice": "80"
+  },
+  {
+    "title": "Plain Shirt",
+    "detail": "A shirt with plain design.",
+    "fullDetail": "Plain design shirt made by material.",
+    "img": "img/shirt_03.png",
+    "price": "450",
+    "promotionPrice": "45"
+  },
+  {
+    "title": "Spring Shirt",
+    "detail": "Made by quality silk",
+    "fullDetail": "Plain design shirt. Created by material team.",
+    "img": "img/shirt_04.png",
+    "price": "800",
+    "promotionPrice": "80"
+  },
+  {
+    "title": "Spring Shirt",
+    "detail": "Made by quality silk",
+    "fullDetail": "Plain design shirt made by high quality material.",
+    "img": "img/shirt_05.png",
+    "price": "990",
+    "promotionPrice": "99"
+  },
+  {
+    "title": "Plain Shirt",
+    "detail": "A shirt with plain design.",
+    "fullDetail": "Plain design shirt made by high quality material.",
+    "img": "img/shirt_02.png",
+    "price": "100",
+    "promotionPrice": "10"
+  },
+  {
+    "title": "Plain Shirt",
+    "detail": "A shirt with plain design.",
+    "fullDetail": "Plain design shirt made by high quality material.",
+    "img": "img/shirt_06.png",
+    "price": "870",
+    "promotionPrice": "87"
+  },
+  {
+    "title": "Plain Shirt",
+    "detail": "A shirt with plain design.",
+    "fullDetail": "Plain design shirt made by high quality material.",
+    "img": "img/shirt_01.png",
+    "price": "300",
+    "promotionPrice": "30"
+  }
+]

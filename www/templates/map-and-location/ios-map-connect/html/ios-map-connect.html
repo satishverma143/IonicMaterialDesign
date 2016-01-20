@@ -1,0 +1,41 @@
+<!--View Information-->
+<!--View name : IOS Map Connect-->
+<!--Controller name : iosMapConnectCtrl-->
+<!--Controller path : www/templates/map-and-location/ios-map-connect/js/controllers.js-->
+<!--State name : app.iosMapConnect-->
+<!--URL : #app/iosMapConnect-->
+
+<ion-view title="IOS Map Connect">
+    <!--map and location section-->
+    <ion-content id="map-and-location">
+        <!--header section-->
+        <form>
+            <div>
+                <i class="fa fa-map-o md-primary-color"></i>
+            </div>
+            <div class="sub-header">Map Connect for IOS</div>
+            <br/>
+        </form><!--end header section-->
+
+        <!--map input option section-->
+        <div class="map-input-option">
+
+            <md-input-container md-no-float="">
+                <input ng-model="destinationLocation" placeholder="Destination Location lat,long">
+            </md-input-container>
+            <a class="md-raised social-button md-button md-default-theme material-background"
+               ng-click="openIosMap(destinationLocation)">
+                Connect to IOS Map
+            </a>
+              <a class="md-raised social-button md-button md-default-theme material-background"
+               ng-click="openGoogleMap(destinationLocation)">
+                  Connect to Google Map
+            </a>
+
+            <!--footer section-->
+            <div class="footer">
+                This feature can use on IOS devise only.
+            </div><!--end footer section-->
+        </div><!--end map input option section-->
+    </ion-content><!--map and location section-->
+</ion-view>

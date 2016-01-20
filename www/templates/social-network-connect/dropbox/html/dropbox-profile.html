@@ -1,0 +1,81 @@
+<!--View Information-->
+<!--View name : Dropbox Profile -->
+<!--Controller name : dropboxProfileCtrl-->
+<!--Controller path : www/templates/social-network-connect/dropbox/js/controllers.js-->
+<!--State name : app.dropboxProfile-->
+<!--URL : #app/dropboxProfile-->
+
+<ion-view title="Social">
+    <!--left button on navigation bar-->
+    <ion-nav-buttons side="left">
+        <a ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item nav-back-btn">
+            <i class="ion-android-arrow-back"></i>
+        </a>
+    </ion-nav-buttons> <!--end left button on navigation bar-->
+
+    <ion-content scroll="false" class="fade-in" id="dropbox-profile-content">
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Profile">
+                <!--social profile content section-->
+                <md-content id="social-profile-content" class="md-padding">
+
+                    <div class="row">
+                        <div class="col-33">
+                            <i class="ion-card"></i>
+                        </div>
+                        <div class="col-66">{{userInfo.id}}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-33">
+                            <i class="ion-android-person"></i>
+                        </div>
+                        <div class="col-66">{{userInfo.name}}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-33">
+                            <i class="ion-android-mail"></i>
+                        </div>
+                        <div class="col-66">{{userInfo.email}}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-33">
+                            <i class="ion-link"></i>
+                        </div>
+                        <div class="col-66">{{userInfo.link}}</div>
+                    </div>
+                </md-content><!--end social profile content section-->
+
+            </md-tab>
+            <md-tab label="More">
+                <md-content class="md-padding">
+                    <!--list section-->
+                    <md-list>
+                        <md-subheader class="dropbox-color">More Dropbox APIs.</md-subheader>
+                        <md-list-item class="md-list-item-default"
+                                      ng-click="navigateTo('app.dropboxFeed')">
+                            <i class="ion-android-list"></i>
+
+                            <p>View Directory</p>
+                        </md-list-item>
+                        <md-list-item class="md-list-item-default" ng-click="logOut($event)">
+                            <i class="ion-locked"></i>
+
+                            <p>Log Out</p>
+                        </md-list-item>
+                    </md-list><!--end list section-->
+                </md-content>
+            </md-tab>
+        </md-tabs>
+
+    </ion-content>
+
+    <!--loading progress-->
+    <div id="dropbox-profile-loading-progress" class="loading-progress fade-in">
+        <ion-spinner ng-if="!isAndroid" class="progress-circular"></ion-spinner>
+        <md-progress-circular ng-if="isAndroid" class="md-warn md-progress-social-profile"
+                              md-mode="indeterminate"></md-progress-circular>
+    </div><!--end loading progress-->
+</ion-view>

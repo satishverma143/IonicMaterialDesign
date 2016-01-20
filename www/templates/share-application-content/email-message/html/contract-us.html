@@ -1,0 +1,75 @@
+<!--View Information-->
+<!--View name : Contract Us-->
+<!--Controller name : contractUsCtrl-->
+<!--Controller path : www/templates/share-application-content/email-message/js/controllers.js-->
+<!--State name : app.contractUs-->
+<!--URL : #app/contractUs-->
+
+<ion-view view-title="">
+    <!--toolbar section-->
+    <md-toolbar class="md-tall md-primary toolbar-with-image">
+        <div>
+            <h1>Contract Us</h1>
+
+            <h2>We love Material Design</h2>
+        </div>
+    </md-toolbar>
+    <!--end toolbar section-->
+
+    <!--button section-->
+    <a class="md-button md-accent md-fab fab-toolbar-medium"
+       ng-click="callTo(contractInfo.telephone)"
+       aria-label="Add">
+        <i class="ion-android-call"></i>
+    </a><!--end button section-->
+
+    <!--contract us section-->
+    <ion-content id="contract-us-content">
+        <!--header section-->
+        <div class="row header">
+            <div class="col">
+                Contact Our Team:
+            </div>
+
+        </div> <!--end header section-->
+
+        <!--content section-->
+        <div class="row content">
+            <div class="col-75">
+                {{contractInfo.email}}
+            </div>
+            <div class="col-25">
+                <i class="ion-android-mail" ng-click="sentEmail(contractInfo.email)"></i>
+            </div>
+        </div>
+
+        <div class="row content">
+            <div class="col-75">
+                {{contractInfo.telephone}}
+            </div>
+            <div class="col-25">
+                <i class="ion-android-textsms" ng-click="sentSms(contractInfo.telephone)"></i>
+            </div>
+        </div>
+
+        <div class="row header">
+            <div class="col">
+                Address:
+            </div>
+        </div>
+        <div class="row content">
+            <div class="col-90">
+                99 Sukhumvit Road
+                <br/>
+                Bangkok Thailand
+            </div>
+
+        </div>
+        <div class="row content">
+            <div class="col-90">
+                Please contract us if you have any questions.
+            </div>
+        </div>
+        <!--end content section-->
+    </ion-content><!--end contract us section-->
+</ion-view>

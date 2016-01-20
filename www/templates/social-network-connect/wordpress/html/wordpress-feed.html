@@ -1,0 +1,71 @@
+<!--View Information-->
+<!--View name : Wordpress Feed-->
+<!--Controller name : wordpressFeedCtrl-->
+<!--Controller path : www/templates/social-network-connect/wordpress/js/controllers.js-->
+<!--State name : app.wordpressFeed-->
+<!--URL : #app/wordpressFeed-->
+
+<ion-view view-title="wordpress">
+    <!--left button on navigation bar-->
+    <ion-nav-buttons side="left">
+        <a ng-click="goBack()" class="button back-button buttons  button-clear header-item nav-back-btn">
+            <i class="ion-android-arrow-back"></i>
+        </a>
+    </ion-nav-buttons><!--end left button on navigation bar-->
+    <!--social feed content section-->
+    <ion-content id="social-feed-content">
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()">
+        </ion-refresher>
+
+        <!--social card section-->
+        <md-card ng-repeat="item in feedList" ng-click="navigateTo('app.wordpressPost',item,wordpressUrl)"
+                 class="social-card">
+            <md-card-content>
+                <md-list-item class="md-2-line md-no-proxy" role="listitem">
+                    <img ng-src="{{item.author.avatar}}" class="md-avatar">
+
+                    <div class="md-list-item-text">
+                        <h3>{{item.author.username}}</h3>
+
+                        <p>{{item.date | date:"short" }}</p>
+                    </div>
+                </md-list-item>
+                <p class="feed-name">{{item.title}}</p>
+
+                <div class="wp-content" data-ng-bind-html="item.content"></div>
+            </md-card-content>
+
+            <!--social card wordpress footer section-->
+            <div class="social-card-wp-footer row">
+                <div class="col">
+                    <i class="ion-android-folder"></i>
+                    <span ng-repeat="category in item.terms.category">
+                    {{category.name}}{{($index != item.terms.category.length-1) ? ",":""}}
+                    </span>
+                </div>
+            </div>
+
+            <div class="social-card-wp-footer row">
+                <div class="col">
+                    <i class="ion-pricetags"></i>
+                    <span ng-repeat="tag in item.terms.post_tag">
+                    {{tag.name}}{{($index != item.terms.post_tag.length-1) ? ",":""}}
+                    </span>
+                </div>
+            </div>
+
+            <div class="social-card-wp-footer row">
+                <div class="col no-border-bottom">
+                    <i class="ion-android-chat"></i>
+                    <span>   View comments </span>
+                </div>
+            </div>
+            <!--social card wordpress footer section-->
+
+        </md-card> <!--end social card section-->
+
+        <ion-infinite-scroll ng-if="!paging.shouldLoadData" on-infinite="loadMore()" distance="1%">
+        </ion-infinite-scroll>
+
+    </ion-content><!--social feed content section-->
+</ion-view>

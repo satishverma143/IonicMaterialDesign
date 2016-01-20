@@ -1,0 +1,33 @@
+<!--View Information-->
+<!--View name : Dropbox Feed -->
+<!--Controller name : dropboxFeedCtrl-->
+<!--Controller path : www/templates/social-network-connect/dropbox/js/controllers.js-->
+<!--State name : app.dropboxFeed-->
+<!--URL : #app/dropboxFeed-->
+
+<ion-view view-title="dropbox feed">
+    <!--left button on navigation bar-->
+    <ion-nav-buttons side="left">
+        <a ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item nav-back-btn">
+            <i class="ion-android-arrow-back"></i>
+        </a>
+    </ion-nav-buttons> <!--end left button on navigation bar-->
+
+    <ion-content>
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()">
+        </ion-refresher>
+        <!--list section-->
+        <md-list>
+            <md-subheader class="dropbox-color">Dropbox Directory</md-subheader>
+            <md-list-item class="md-list-item-default" ng-click="popUpFileName(item,$event)"
+                          ng-repeat="item in feedList">
+                <i class=" {{ getIcon(item.icon)}} dropbox-color"></i>
+
+                <p>{{item.path}}</p>
+            </md-list-item>
+        </md-list>
+        <!--end list section-->
+        <ion-infinite-scroll ng-if="shouldLoadData" on-infinite="getFeedData(true)" distance="1%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

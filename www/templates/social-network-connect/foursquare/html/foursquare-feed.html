@@ -1,0 +1,66 @@
+<!--View Information-->
+<!--View name : Foursquare Feed-->
+<!--Controller name : foursquareFeedCtrl-->
+<!--Controller path : www/templates/social-network-connect/foursquare/js/controllers.js-->
+<!--State name : app.foursquareFeed-->
+<!--URL : #app/foursquareFeed-->
+
+<ion-view view-title="foursquare feed">
+    <!--left button on navigation bar-->
+    <ion-nav-buttons side="left">
+        <a ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item nav-back-btn">
+            <i class="ion-android-arrow-back"></i>
+        </a>
+    </ion-nav-buttons><!--end left button on navigation bar-->
+
+    <!--social feed content section-->
+    <ion-content id="social-feed-content">
+
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()">
+        </ion-refresher>
+
+        <ion-list>
+
+            <!--social card section-->
+            <md-card ng-repeat="item in feedList" class="social-card">
+                <md-card-content>
+                    <md-list-item class="md-2-line md-no-proxy" role="listitem">
+                        <img ng-src="{{ item.venue.photos.groups[0].items[0].prefix }}256x256{{item.venue.photos.groups[0].items[0].suffix }}"
+                             class="md-avatar">
+
+                        <div class="md-list-item-text">
+                            <h3>{{item.venue.name}}</h3>
+
+                            <p>{{item.createdAt |epochToDate | date:"short"}}</p>
+                        </div>
+                    </md-list-item>
+                    <p>{{item.text}}</p>
+                </md-card-content>
+                <!--social card image section-->
+                <div class="social-card-image">
+                    <img ng-src="{{item.photourl}}"
+                         ng-show="item.photourl != null ?  true : false"
+                         class="ng-hide">
+                </div><!--end social card image section-->
+
+                <!--social card footer section-->
+                <div class="social-card-footer">
+                    <div class="row-content" layout="row">
+                        <div class="col-33">
+                            {{item.likes.count | numberSuffix}} <span>Likes</span>
+                        </div>
+                        <div class="col-33">
+                            {{item.todo.count | numberSuffix}} <span>Todo</span>
+                        </div>
+                        <div class="col-33">
+                            {{item.viewCount | numberSuffix}} <span>Views</span>
+                        </div>
+                    </div>
+                </div><!--end social card footer section-->
+            </md-card><!--end social card section-->
+
+            <ion-infinite-scroll ng-if="shouldLoadData" on-infinite="getFeedData(true)" distance="1%">
+            </ion-infinite-scroll>
+
+    </ion-content><!--end social feed content section-->
+</ion-view>

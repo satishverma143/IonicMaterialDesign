@@ -1,0 +1,83 @@
+<!--View Information-->
+<!--View name : Note List-->
+<!--Controller name : noteListCtrl-->
+<!--Controller path : www/templates/application-storage/local-application-db/js/controllers.js-->
+<!--State name : app.notelist-->
+<!--URL : #app/notelist-->
+
+<ion-view title="Note List">
+    <!--right button on navigation bar-->
+    <ion-nav-buttons side="right">
+        <md-button ng-disabled="isLoading" class="md-icon-button ion-nav-button-right" ng-click="navigateTo('app.notesetting')"
+                   aria-label="Setting">
+            <i class="ion-android-more-vertical"></i>
+        </md-button>
+    </ion-nav-buttons><!--end right button on navigation bar-->
+
+    <!--note list section-->
+    <ion-content id="note-list-content" class="fade-in">
+        <!--list section-->
+        <md-list>
+            <!--list item section-->
+            <md-list-item>
+                <md-input-container md-no-float="" class="search-box">
+                    <i class="ion-android-search"></i>
+                    <input ng-model="filterText" placeholder="Search for notes.">
+                </md-input-container>
+            </md-list-item>
+
+            <!--Below code it will disable animation to better performance-->
+            <md-card ng-if="!isAnimated"  ng-click="navigateTo('app.notedetail' , note )" class="card-item"
+                     ng-repeat="note in noteList | filter: { title: filterText } | orderBy: 'title'">
+                    <md-card-content>
+                        <div class="card-content">
+                            <h1 class="md-title">
+                                    <span>
+                                        <i class="ion-android-list"></i>{{note.title}}
+                                    </span>
+                            </h1>
+                            <div class="note-content-detail">
+                                {{note.createDate}} : {{note.detail}}
+                            </div>
+                        </div>
+                    </md-card-content>
+            </md-card>
+
+            <!--Below code it will show animation when selecting row.-->
+            <md-list-item ng-if="isAnimated" ng-repeat="note in noteList | filter: { title: filterText } | orderBy: 'title'">
+                <md-card>
+                    <md-button ng-click="navigateTo('app.notedetail' , note )">
+                        <md-card-content>
+                            <div class="card-content">
+                                <h1 class="md-title">
+                                    <span>
+                                        <i class="ion-android-list"></i>{{note.title}}
+                                    </span>
+                                </h1>
+
+                                <div>
+                                    {{note.createDate}} : {{note.detail}}
+                                </div>
+                            </div>
+                        </md-card-content>
+                    </md-button>
+                </md-card>
+            </md-list-item>
+            <!--end list item section-->
+        </md-list>
+        <!--end list section-->
+    </ion-content><!--end note list section-->
+
+    <!--footer fab bar-->
+    <div class="footer-fab-bar">
+        <a class="md-button md-accent md-fab fab-footer" ng-click="navigateTo('app.notedetail')" aria-label="Add">
+            <i class="ion-android-create"></i>
+        </a>
+    </div><!--end footer fab bar-->
+
+    <!--loading progress-->
+    <div id="note-list-loading-progress" class="loading-progress fade-in">
+        <ion-spinner ng-if="!isAndroid" class="progress-circular"></ion-spinner>
+        <md-progress-circular ng-if="isAndroid" md-mode="indeterminate"></md-progress-circular>
+    </div><!--end loading progress-->
+</ion-view>

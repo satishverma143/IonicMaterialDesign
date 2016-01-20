@@ -1,0 +1,433 @@
+<!--View Information-->
+<!--View name : Default User Interface-->
+<!--Controller name : defaultUserInterfaceCtrl-->
+<!--Controller path : www/templates/material-user-interface/default-user-interface/js/controllers.js-->
+<!--State name : app.defaultUI-->
+<!--URL : #app/defaultUI-->
+
+<ion-view title="User Interface">
+    <!--user interface section-->
+    <ion-slide-box id="user-interface-content" active-slide="0">
+        <!--slide section-->
+        <ion-slide class="slide-01">
+
+            <div class="row">
+                <div class="col">
+                    <a class="md-button md-accent md-fab" aria-label="Add">
+                        <i class="icon ion-plus"></i>
+                    </a>
+                    <a class="md-button md-accent md-fab" aria-label="Edit">
+                        <i class="ion-android-create"></i>
+                    </a>
+                    <br/>
+
+                    <a class="md-button md-accent md-fab" aria-label="Shop">
+                        <i class="fa fa-shopping-cart"></i>
+                    </a>
+                    <a class="md-button md-accent md-fab" aria-label="Call">
+                        <i class="ion-android-call"></i>
+                    </a>
+                    <br/>
+
+                    <div class="button-icon-content">
+                        <i class="ion-android-mail button-icon"></i>
+                        <i class="ion-android-textsms button-icon"></i>
+                    </div>
+                    <a href="" class="md-raised md-button md-default-theme material-background">Button</a>
+                    <br/>
+                    <a href="" class="md-raised md-button md-default-theme"> Button</a>
+                </div>
+            </div>
+
+        </ion-slide>
+        <ion-slide class="slide-02">
+            <form name="contractForm">
+                <ion-content id="default-input-content">
+                    <md-input-container md-no-float="" class="md-list-item-full-width">
+                        <input placeholder=" Input Text">
+                    </md-input-container>
+                    <md-input-container class="icon-title" md-no-float>
+                        <i class="ion-android-mail"></i>
+                        <input name="email" placeholder="Input Text">
+                    </md-input-container>
+                    <md-input-container class="icon-title" md-no-float>
+                        <i class="fa fa-unlock-alt"></i>
+                        <input type="password" name="password" placeholder="Input Password">
+                    </md-input-container>
+                    <md-input-container class="icon-title" md-no-float>
+                        <i class="ion-android-favorite"></i>
+                        <input numbers-only name="age" ng-model="inputNumber" placeholder="Input Number" type="tel">
+                    </md-input-container>
+                </ion-content>
+            </form>
+        </ion-slide>
+        <ion-slide class="slide-03">
+
+
+            <div class="radio-container">
+                <md-radio-group ng-model="radioData.fruit">
+                    <md-radio-button value="Apple">Apple</md-radio-button>
+                    <md-radio-button value="Banana"> Banana</md-radio-button>
+                    <md-radio-button value="Mango">Mango</md-radio-button>
+                </md-radio-group>
+            </div>
+            <div class="checkbox-container">
+                <md-checkbox aria-label="Checkbox">
+                    Check Me.
+                </md-checkbox>
+            </div>
+            <div class="switch-container">
+                <md-switch ng-model="switchData.switchNormal" aria-label="Switch" ng-true-value="'You change to True'"
+                           ng-false-value="'You change to False'" class="md-warn">
+                    {{ switchData.switchNormal }}
+                </md-switch>
+                <md-switch class="md-primary" md-no-ink aria-label="Switch No Ink" ng-model="switchData.switchNoInk">
+                    Switch md no ink
+                </md-switch>
+            </div>
+
+        </ion-slide>
+        <ion-slide class="slide-04">
+
+            <md-card>
+                <img ng-src="{{'img/bg_cover_01.png'}}" class="md-card-image" alt="Card image">
+                <md-card-content>
+                    <h2 class="md-title">MD-CARD</h2>
+
+                    <p>
+                        card content ........................................
+                    </p>
+                </md-card-content>
+                <div class="md-actions" layout="row" layout-align="end center">
+                    <a href="" class="md-button md-default-theme">Action 1</a>
+                    <a href="" class="md-button md-default-theme">Action 2</a>
+                </div>
+            </md-card>
+
+        </ion-slide>
+
+
+        <ion-slide class="slide-05">
+            <div class="row">
+                <div class="col">
+                    <a href="" ng-click="showConfirmDialog($event)"
+                       class="md-raised md-button md-default-theme material-background">Confirm Dialog</a>
+                    <br/>
+                    <a href="" ng-click="showAlertDialog($event)"
+                       class="md-raised md-button md-default-theme material-background">Alert Dialog</a>
+                    <br/>
+
+                    <p>
+                        {{dialogResult}}
+                    </p>
+                </div>
+            </div>
+
+        </ion-slide>
+
+        <ion-slide class="slide-06">
+            <div class="row">
+                <div class="col">
+                    <a href="" ng-click="showToast('top')"
+                       class="md-raised md-button md-default-theme material-background">Toast Top</a>
+                    <br/>
+                    <a href="" ng-click="showToast('bottom')"
+                       class="md-raised md-button md-default-theme material-background">Toast Bottom</a>
+                </div>
+            </div>
+        </ion-slide>
+
+        <ion-slide class="slide-07">
+            <div class="row">
+                <div class="col">
+                    <a href="" ng-click="showListBottomSheet($event)"
+                       class="md-raised md-button md-default-theme material-background">List Bottom Sheet</a>
+                    <br/>
+                    <a href="" ng-click="showGridBottomSheet($event)"
+                       class="md-raised md-button md-default-theme material-background">Grid Bottom Sheet</a>
+                </div>
+            </div>
+        </ion-slide>
+        <ion-slide class="slide-08">
+            <md-menu md-position-mode="target-right target" class="md-list-item-md-menu-right">
+                <p ng-click="$mdOpenMenu()">
+                    Menu Small&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <md-icon md-menu-origin md-svg-icon="more"></md-icon>
+                </p>
+                <md-menu-content width="1">
+                    <md-menu-item>
+                        <a class="md-button md-default-theme" ng-click="doSomeThing()">
+                            <span class="menu-item-button">Action 1</span>
+                        </a>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <a class="md-button md-default-theme" ng-click="doSomeThing()">
+                            <span class="menu-item-button">Action 2</span>
+                        </a>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <a class="md-button md-default-theme" ng-click="doSomeThing()">
+                            <span class="menu-item-button">Action 3</span>
+                        </a>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <a class="md-button md-default-theme" ng-click="doSomeThing()">
+                            <span class="menu-item-button">Action 4</span>
+                        </a>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+
+            <md-menu md-position-mode="target-right target" class="md-list-item-md-menu-right">
+                <p ng-click="$mdOpenMenu()">
+                    Menu Medium&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <md-icon md-menu-origin md-svg-icon="more"></md-icon>
+                </p>
+                <md-menu-content width="2">
+                    <md-menu-item>
+                        <a class="md-button md-default-theme" ng-click="doSomeThing()">
+                            <span class="menu-item-button">Action 1</span>
+                        </a>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <a class="md-button md-default-theme" ng-click="doSomeThing()">
+                            <span class="menu-item-button">Action 2</span>
+                        </a>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <a class="md-button md-default-theme" ng-click="doSomeThing()">
+                            <span class="menu-item-button">Action 3</span>
+                        </a>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <a class="md-button md-default-theme" ng-click="doSomeThing()">
+                            <span class="menu-item-button">Action 4</span>
+                        </a>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+            <md-menu md-position-mode="target-right target" class="md-list-item-md-menu-right">
+                <p ng-click="$mdOpenMenu()">
+                    Menu Large&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <md-icon md-menu-origin md-svg-icon="more"></md-icon>
+                </p>
+                <md-menu-content width="3">
+                    <md-menu-item>
+                        <a class="md-button md-default-theme" ng-click="doSomeThing()">
+                            <span class="menu-item-button">Action 1</span>
+                        </a>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <a class="md-button md-default-theme" ng-click="doSomeThing()">
+                            <span class="menu-item-button">Action 2</span>
+                        </a>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <a class="md-button md-default-theme" ng-click="doSomeThing()">
+                            <span class="menu-item-button">Action 3</span>
+                        </a>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <a class="md-button md-default-theme" ng-click="doSomeThing()">
+                            <span class="menu-item-button">Action 4</span>
+                        </a>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+            <md-menu md-position-mode="target-right target" class="md-list-item-md-menu-right">
+                <p ng-click="$mdOpenMenu()">
+                    Menu Super Large
+                    <md-icon md-menu-origin md-svg-icon="more"></md-icon>
+                </p>
+                <md-menu-content width="4">
+                    <md-menu-item>
+                        <a class="md-button md-default-theme" ng-click="doSomeThing()">
+                            <span class="menu-item-button">Action 1</span>
+                        </a>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <a class="md-button md-default-theme" ng-click="doSomeThing()">
+                            <span class="menu-item-button">Action 2</span>
+                        </a>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <a class="md-button md-default-theme" ng-click="doSomeThing()">
+                            <span class="menu-item-button">Action 3</span>
+                        </a>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <a class="md-button md-default-theme" ng-click="doSomeThing()">
+                            <span class="menu-item-button">Action 4</span>
+                        </a>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+            <div class="row">
+                <div class="col-25">
+                </div>
+                <div class="col-50">
+                    <md-select ng-model="mdSelectValue" aria-label="md-option">
+                        <md-option value="0">Option 1</md-option>
+                        <md-option value="1">Option 2</md-option>
+                        <md-option value="2">Option 3</md-option>
+                        <md-option value="3">Option 4</md-option>
+                    </md-select>
+                </div>
+            </div>
+
+        </ion-slide>
+        <ion-slide class="slide-09">
+
+            <div class="ui-progress-circular">
+                <ion-spinner ng-if="!isAndroid" class="progress-circular"></ion-spinner>
+                <md-progress-circular ng-if="isAndroid" md-mode="indeterminate"></md-progress-circular>
+            </div>
+            <p class="ui-progress-circular-content">Progress Circular</p>
+        </ion-slide>
+        <ion-slide class="slide-10">
+            <md-tabs md-dynamic-height md-border-bottom>
+                <md-tab label="Tab 1">
+                    <md-content>
+                        Tab 1 Detail .......
+                    </md-content>
+                </md-tab>
+                <md-tab label="Tab 2">
+                    <md-content>
+                        Tab 2 Detail .......
+                    </md-content>
+                </md-tab>
+            </md-tabs>
+        </ion-slide>
+
+        <ion-slide class="slide-11">
+
+            <md-list>
+                <md-divider></md-divider>
+                <md-subheader class="md-warn">Default List</md-subheader>
+                <md-list-item class="md-list-item-default" ng-click="doSomeThing()">
+                    <i class="ion-android-pin"></i>
+
+                    <p>Data Row 1</p>
+                </md-list-item>
+                <md-list-item class="md-list-item-default" ng-click="doSomeThing()">
+                    <i class="ion-android-refresh"></i>
+
+                    <p>Data Row 2</p>
+                </md-list-item>
+                <md-list-item class="md-list-item-default" ng-click="doSomeThing()">
+                    <i class="ion-android-create"></i>
+
+                    <p>Data Row 3</p>
+                </md-list-item>
+                <md-divider></md-divider>
+
+                <md-subheader>2 line item</md-subheader>
+                <md-list-item class="md-2-line">
+                    <img ng-src="{{'img/app_icon.png'}}" class="md-avatar"/>
+
+                    <div class="md-list-item-text">
+                        <h3>Hrader ...</h3>
+
+                        <p>Detail ....</p>
+                    </div>
+                </md-list-item>
+                <md-divider></md-divider>
+
+        </ion-slide>
+        <ion-slide class="slide-12">
+            <md-whiteframe class="md-whiteframe-z1" layout layout-align="center center">
+                <span>.md-whiteframe-z1</span>
+            </md-whiteframe>
+            <md-whiteframe class="md-whiteframe-z2" layout layout-align="center center">
+                <span>.md-whiteframe-z2</span>
+            </md-whiteframe>
+            <md-whiteframe class="md-whiteframe-z3" layout layout-align="center center">
+                <span>.md-whiteframe-z3</span>
+            </md-whiteframe>
+            <md-whiteframe class="md-whiteframe-z4" layout layout-align="center center">
+                <span>.md-whiteframe-z4</span>
+            </md-whiteframe>
+            <md-whiteframe class="md-whiteframe-z5" layout layout-align="center center">
+                <span>.md-whiteframe-z5</span>
+            </md-whiteframe>
+        </ion-slide>
+        <ion-slide class="slide-13">
+        </ion-slide>
+        <!--end slide section-->
+    </ion-slide-box>  <!--end user interface section-->
+
+</ion-view>
+
+<!--angular template section-->
+<script type="text/ng-template" id="ui-list-bottom-sheet-template">
+    <md-bottom-sheet class="md-list md-has-header">
+        <h1 class="md-bottom-sheet-header">List Bottom Sheet</h1>
+        <!--list section-->
+        <md-list>
+            <md-list-item>
+                <a class="md-default-theme md-bottom-sheet-list-item"
+                   ng-click="closeListBottomSheet()">
+                    <i class="ion-android-call"></i>
+                    <span>Actions 1</span>
+                </a>
+            </md-list-item>
+            <md-list-item>
+                <a class="md-default-theme md-bottom-sheet-list-item"
+                   ng-click="closeListBottomSheet()">
+                    <i class="ion-android-list"></i>
+                    <span>Actions 2</span>
+                </a>
+            </md-list-item>
+            <md-list-item>
+                <a class="md-default-theme md-bottom-sheet-list-item"
+                   ng-click="closeListBottomSheet()">
+                    <i class="ion-android-delete"></i>
+                    <span>Actions 3</span>
+                </a>
+            </md-list-item>
+        </md-list>
+
+        <!--end list section-->
+    </md-bottom-sheet>
+</script>
+
+<script type="text/ng-template" id="ui-grid-bottom-sheet-template">
+    <md-bottom-sheet class="md-grid">
+        <!--list section-->
+        <md-list id="bottom-sheet-grid-md-list">
+            <md-list-item>
+                <a class="md-grid-item-content" ng-click="closeListBottomSheet()">
+                    <md-icon md-svg-src="facebook"></md-icon>
+                    <div class="md-grid-text"> Facebook</div>
+                </a>
+            </md-list-item>
+            <md-list-item>
+                <a class="md-grid-item-content" ng-click="closeListBottomSheet()">
+                    <md-icon md-svg-src="twitter"></md-icon>
+                    <div class="md-grid-text"> Twitter</div>
+                </a>
+            </md-list-item>
+            <md-list-item>
+                <a class="md-grid-item-content" ng-click="closeListBottomSheet()">
+                    <md-icon md-svg-src="mail"></md-icon>
+                    <div class="md-grid-text"> Mail</div>
+                </a>
+            </md-list-item>
+            <md-list-item>
+                <a class="md-grid-item-content" ng-click="closeListBottomSheet()">
+                    <i class="ion-android-image"></i>
+
+                    <div class="md-grid-text"> Save Image</div>
+                </a>
+            </md-list-item>
+            <md-list-item>
+                <a class="md-grid-item-content" ng-click="closeListBottomSheet()">
+                    <md-icon md-svg-src="share-arrow"></md-icon>
+                    <div class="md-grid-text"> More</div>
+                </a>
+            </md-list-item>
+        </md-list>
+        <!--end list section-->
+    </md-bottom-sheet>
+</script>
+<!--end angular template section-->
