@@ -18,7 +18,53 @@
     "shelljs": "^0.3.0"
   },
   "cordovaPlugins": [
-    "cordova-plugin-splashscreen"
+    "cordova-plugin-splashscreen",
+    "ionic-plugin-keyboard",
+    "cordova-plugin-googleplayservices",
+    "cordova-plugin-contacts",
+    "cordova-plugin-camera",
+    "cordova-plugin-vibration",
+    "cordova-plugin-device",
+    "cordova-plugin-console",
+    "cordova-plugin-whitelist",
+    "cordova-plugin-transport-security",
+    "cordova-plugin-inappbrowser",
+    {
+      "locator": "https://github.com/floatinghotpot/cordova-plugin-admob.git",
+      "id": "cordova-plugin-admob"
+    },
+    {
+      "locator": "https://github.com/litehelpers/Cordova-sqlite-storage.git",
+      "id": "cordova-sqlite-storage"
+    },
+    {
+      "locator": "https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git",
+      "id": "cordova-plugin-x-socialsharing"
+    },
+    {
+      "locator": "https://github.com/cordova-sms/cordova-sms-plugin.git",
+      "id": "com.cordova.plugins.sms"
+    },
+    {
+      "locator": "https://github.com/katzer/cordova-plugin-email-composer.git",
+      "id": "de.appplant.cordova.plugin.email-composer"
+    },
+    {
+      "locator": "https://github.com/devgeeks/Canvas2ImagePlugin.git",
+      "id": "org.devgeeks.Canvas2ImagePlugin"
+    },
+    {
+      "locator": "https://github.com/wymsee/cordova-imagePicker.git",
+      "id": "com.synconset.imagepicker"
+    },
+    {
+      "locator": "https://github.com/EddyVerbruggen/Flashlight-PhoneGap-Plugin.git",
+      "id": "cordova-plugin-flashlight"
+    },
+    {
+      "locator": "https://github.com/katzer/cordova-plugin-local-notifications",
+      "id": "de.appplant.cordova.plugin.local-notification"
+    }
   ],
   "cordovaPlatforms": [
     "ios",
